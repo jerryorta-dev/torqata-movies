@@ -35,7 +35,7 @@ Use working directory `./apps/firebase/sample-data`;
 - [ ] Set up [firebase service account key](https://console.firebase.google.com/project/torqata-movies/settings/serviceaccounts/adminsdk)
 - [ ] Download service account json file external to this repo.
 - [ ] Convert CSV data to json using [node-csvtojson](https://github.com/Keyang/node-csvtojson) by running `node node csv-to-json.js`.
-- [ ] Import to firestore by running 
+- [ ] Import to firestore by running `node import-data.js`
 
 
 

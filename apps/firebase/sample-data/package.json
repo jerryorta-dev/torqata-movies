@@ -1,7 +1,7 @@
 {
   "name": "sample-data",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "import-data.js",
   "license": "MIT",
   "private": false,
   "devDependencies": {
