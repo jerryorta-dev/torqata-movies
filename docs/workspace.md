@@ -21,6 +21,11 @@ In `angular.json`, add default to "cli" node:
     },
 ```
 
+### Workspace Boundaries
+
+- [See Docs](https://nx.dev/latest/angular/workspace/structure/monorepo-tags)
+- See lint rules in `.eslintrc.json`
+- See Code Generator in `tools/generators/web-lib`
 
 
 
