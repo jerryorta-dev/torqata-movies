@@ -18,6 +18,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TORQATA_MOVIES }}'
           channelId: live
           projectId: torqata-movies
-          entryPoint: apps/firebase/firebase.json
+          entryPoint: apps/firebase
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
