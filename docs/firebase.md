@@ -26,6 +26,19 @@ Using firebase as an abstraction over firestore and Google App Engine
 
 To test, create a PR and you should see a github action in the PR set up a review environment. Merge the PR and you should see the app deployed to the main firebase host.
 
+## Mock Data
+
+Use working directory `./apps/firebase/sample-data`;
+
+- [ ] install firebase-import by running `npm install -g firebase-import`
+- [ ] Download data from [here](https://www.kaggle.com/shivamb/netflix-shows)
+- [ ] Set up [firebase service account key](https://console.firebase.google.com/project/torqata-movies/settings/serviceaccounts/adminsdk)
+- [ ] Download service account json file external to this repo.
+- [ ] Convert CSV data to json using [node-csvtojson](https://github.com/Keyang/node-csvtojson) by running `node node csv-to-json.js`.
+- [ ] Import to firestore by running 
+
+
+
 
 
 
