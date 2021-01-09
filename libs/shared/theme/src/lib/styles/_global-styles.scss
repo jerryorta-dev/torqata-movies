@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+@mixin global-styles($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  // COLORS
+  .primary {
+    color: mat-color($primary, default);
+  }
+
+  .accent {
+    color: mat-color($accent, default);
+  }
+
+  .warn {
+    color: mat-color($warn, default);
+  }
+
+
+  .ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .text-nowrap {
+    white-space: nowrap;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+
+}

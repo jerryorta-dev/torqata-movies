@@ -1,0 +1,175 @@
+@import '~@angular/material/theming';
+@import './palettes';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, "Helvetica Neue", sans-serif',
+  $display-4: mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3: mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2: mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1: mat-typography-level(34px, 40px, 400),
+  $headline: mat-typography-level(24px, 32px, 200),
+  $title: mat-typography-level(20px, 32px, 300),
+  $subheading-2: mat-typography-level(16px, 28px, 400),
+  $subheading-1: mat-typography-level(15px, 24px, 400),
+  $body-2: mat-typography-level(14px, 24px, 400),
+  $body-1: mat-typography-level(14px, 20px, 300),
+  $caption: mat-typography-level(12px, 20px, 400),
+  $button: mat-typography-level(14px, 14px, 300),
+  // Line-height must be unit-less fraction of the font-size. $input: mat-typography-level(inherit, 1.125, 400),
+);
+
+// Palettes
+$marketing-primary-palette: mat-palette($mat-blue);
+$marketing-accent-palette: mat-palette($mat-pink, A200, A100, A400);
+$marketing-warn-palette: mat-palette($mat-deep-orange);
+
+$marketing-theme-config: (
+  color: (
+    primary: $marketing-primary-palette,
+    accent: $marketing-accent-palette,
+    warn: $marketing-warn-palette,
+  ),
+);
+
+// Theme
+$light-theme: mat-light-theme($marketing-theme-config);
+
+// Shallow Foreground
+//$theme-foreground-shallow: map-get($marketing-theme, foreground);
+//$theme-foreground-shallow: map-merge(
+//  $theme-foreground-shallow,
+//  (
+//    //base: white,
+//      base: $marketing-light,
+//    divider: $marketing-divider,
+//    dividers: $marketing-divider,
+//    disabled: rgba(255, 255, 255, 0.5),
+//    disabled-button: rgba(255, 255, 255, 0.3),
+//    disabled-text: rgba(255, 255, 255, 0.5),
+//    elevation: black,
+//    hint-text: rgba(255, 255, 255, 0.5),
+//    secondary-text: rgba(255, 255, 255, 0.7),
+//    //icon: white,
+//      icon: $marketing-white-extra-lighter,
+//    //icons: white,
+//      icons: $marketing-white-extra-lighter,
+//    //text: white,
+//      text: $marketing-white-extra-lighter,
+//    slider-min: white,
+//    slider-off: rgba(255, 255, 255, 0.3),
+//    slider-off-active: rgba(255, 255, 255, 0.3)
+//  )
+//);
+//$marketing-theme: map-merge(
+//  $marketing-theme,
+//  (
+//    foreground: $theme-foreground-shallow,
+//  )
+//);
+//
+//// Nested Foreground
+//$theme-foreground-color: map-get($marketing-theme, color);
+//$theme-foreground-color-foreground: map-get($theme-foreground-color, foreground);
+//$theme-foreground-color-foreground: map-merge(
+//  $theme-foreground-color-foreground,
+//  (
+//    //base: white,
+//      base: $marketing-light,
+//    divider: $marketing-divider,
+//    dividers: $marketing-divider,
+//    disabled: rgba(255, 255, 255, 0.5),
+//    disabled-button: rgba(255, 255, 255, 0.3),
+//    disabled-text: rgba(255, 255, 255, 0.5),
+//    elevation: black,
+//    hint-text: rgba(255, 255, 255, 0.5),
+//    secondary-text: rgba(255, 255, 255, 0.7),
+//    //icon: white,
+//      icon: $marketing-white-extra-lighter,
+//    //icons: white,
+//      icons: $marketing-white-extra-lighter,
+//    //text: white,
+//      text: $marketing-white-extra-lighter,
+//    slider-min: white,
+//    slider-off: rgba(255, 255, 255, 0.3),
+//    slider-off-active: rgba(255, 255, 255, 0.3)
+//  )
+//);
+//$theme-foreground-color: map-merge(
+//  $theme-foreground-color,
+//  (
+//    foreground: $theme-foreground-color-foreground,
+//  )
+//);
+//
+//$marketing-theme: map-merge(
+//  $marketing-theme,
+//  (
+//    color: $theme-foreground-color,
+//  )
+//);
+//
+//// Shallow Background
+//$theme-background-shallow: map-get($marketing-theme, background);
+//$theme-background-shallow: map-merge(
+//  $theme-background-shallow,
+//  (
+//    status-bar: black,
+//    app-bar: $app-bar,
+//    background: $background,
+//    hover: rgba(255, 255, 255, 0.04),
+//    card: $card,
+//    dialog: $card,
+//    disabled-button: rgba(255, 255, 255, 0.12),
+//    raised-button: $card,
+//    focused-button: rgba(255, 255, 255, 0.12),
+//    selected-button: $app-bar,
+//    selected-disabled-button: $card,
+//    disabled-button-toggle: black,
+//    unselected-chip: $unselected-chip,
+//    disabled-list-option: black,
+//    tooltip: $unselected-chip,
+//  )
+//);
+//$marketing-theme: map-merge(
+//  $marketing-theme,
+//  (
+//    background: $theme-background-shallow,
+//  )
+//);
+//
+//// Nested Background
+//$theme-background-color: map-get($marketing-theme, color);
+//$theme-background-color-background: map-get($theme-background-color, background);
+//$theme-background-color-background: map-merge(
+//  $theme-background-color-background,
+//  (
+//    status-bar: black,
+//    app-bar: $app-bar,
+//    background: $background,
+//    hover: rgba(255, 255, 255, 0.04),
+//    card: $card,
+//    dialog: $card,
+//    disabled-button: rgba(255, 255, 255, 0.12),
+//    raised-button: $card,
+//    focused-button: rgba(255, 255, 255, 0.12),
+//    selected-button: $app-bar,
+//    selected-disabled-button: $card,
+//    disabled-button-toggle: black,
+//    unselected-chip: $unselected-chip,
+//    disabled-list-option: black,
+//    tooltip: $unselected-chip,
+//  )
+//);
+//$theme-background-color: map-merge(
+//  $theme-background-color,
+//  (
+//    background: $theme-background-color-background,
+//  )
+//);
+//
+//$marketing-theme: map-merge(
+//  $marketing-theme,
+//  (
+//    color: $theme-background-color,
+//  )
+//);

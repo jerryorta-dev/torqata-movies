@@ -1,0 +1,9 @@
+@import './utilities/utilities';
+@import './global-styles';
+@import '../theming/common/_mixins/perfect-scrollbar';
+
+@mixin ui-styles($theme) {
+  @include utilities();
+  @include global-styles($theme);
+  @include perfect-scrollbar($theme);
+}

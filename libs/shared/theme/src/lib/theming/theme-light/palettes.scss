@@ -1,0 +1,36 @@
+// https://color.adobe.com/create/color-wheel
+// Foreground
+$light-divider: #313c4e;
+
+// Background original
+//$light-black: #212936;
+//$light-black-light: #2b3648;
+//$light-light: #56657f;
+
+$light-black: #191f29;
+$light-black-light: #232c3b;
+$light-light: #4e5b73;
+
+// #303030
+$background: $light-black-light;
+// #424242
+$card: $light-black;
+// #212121
+$app-bar: $light-black;
+// #616161
+$unselected-chip: $light-light;
+
+// Dark White Extra
+$light-white-extra: #afbdd1;
+$light-white-extra-lighter: #c2d1e7;
+// Dark White
+$light-white: #8997b1;
+
+$modals-scrim-black-dark: rgba($light-black, 0.54);
+
+$spt-border-color: rgba(255, 255, 255, 0.12);
+
+$default-border-color: rgba(255, 255, 255, 0.1);
+$default-background-color: rgb(19, 21, 24);
+$spt-dark-label-color: rgba(255, 255, 255, 0.7);
+$light-faded-title: rgba(255, 255, 255, 0.6);
