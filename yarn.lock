@@ -2447,6 +2447,13 @@
     "@typescript-eslint/types" "4.3.0"
     eslint-visitor-keys "^2.0.0"
 
+"@uiux/fn@^11.0.9":
+  version "11.0.9"
+  resolved "https://registry.yarnpkg.com/@uiux/fn/-/fn-11.0.9.tgz#d1d2b7103ac1487454bb4378b3566074b9bef608"
+  integrity sha512-PJzpG6aqMDYwF5q7V09w1HWvkywaywNrBVdTpnFwnbgRcBBoklSh7s8Z0xqmK64bRj9my+bj23uViFCI7YkBnA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"

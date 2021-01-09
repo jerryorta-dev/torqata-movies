@@ -12,7 +12,261 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:worker",
+                  "type:designs",
+                  "type:models",
+                  "type:fns",
+                  "type:utils",
+                  "type:any-models",
+                  "type:global",
+                  "type:data-access",
+                  "type:any-utils",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:actions",
+                  "type:worker",
+                  "type:ui",
+                  "type:data-access",
+                  "type:selectors",
+                  "type:utils",
+                  "type:fns",
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:actions",
+                  "type:worker",
+                  "type:data-access",
+                  "type:selectors",
+                  "type:utils",
+                  "type:fns",
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:actions",
+                  "type:worker",
+                  "type:selectors",
+                  "type:utils",
+                  "type:fns",
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:selectors",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils",
+                  "type:fns",
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": [
+                  "type:fns",
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:fns",
+                "onlyDependOnLibsWithTags": [
+                  "type:models",
+                  "type:global",
+                  "type:external",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-utils",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:node-app",
+                "onlyDependOnLibsWithTags": [
+                  "type:node-feature",
+                  "type:any-external",
+                  "type:node-external",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:node-feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:node-data-access",
+                  "type:node-utils",
+                  "type:node-fn",
+                  "type:node-model",
+                  "type:node-external",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-utils",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:node-data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:node-util",
+                  "type:node-fn",
+                  "type:node-model",
+                  "type:node-external",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-utils",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:node-util",
+                "onlyDependOnLibsWithTags": [
+                  "type:node-fn",
+                  "type:node-model",
+                  "type:node-external",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-utils",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:node-fn",
+                "onlyDependOnLibsWithTags": [
+                  "type:node-model",
+                  "type:node-external",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-utils",
+                  "type:any-models"
+                ]
+              },
+              {
+                "sourceTag": "type:models",
+                "onlyDependOnLibsWithTags": [
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-models",
+                  "type:external",
+                  "type:global"
+                ]
+              },
+              {
+                "sourceTag": "type:global",
+                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-models", "type:external"]
+              },
+              {
+                "sourceTag": "type:node-model",
+                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-models", "type:any-external"]
+              },
+              {
+                "sourceTag": "type:actions",
+                "onlyDependOnLibsWithTags": ["type:models", "type:any-models"]
+              },
+              {
+                "sourceTag": "type:worker",
+                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-external", "type:any-models"]
+              },
+              {
+                "sourceTag": "type:any-utils",
+                "onlyDependOnLibsWithTags": ["type:any-fns", "type:any-external", "type:any-models"]
+              },
+              {
+                "sourceTag": "type:any-fns",
+                "onlyDependOnLibsWithTags": ["type:any-external", "type:any-models"]
+              },
+              {
+                "sourceTag": "scope:mixer-electron",
+                "onlyDependOnLibsWithTags": [
+                  "scope:mixer-electron",
+                  "scope:node-shared",
+                  "scope:any-shared",
+                  "scope:node-external"
+                ]
+              },
+              {
+                "sourceTag": "scope:node-shared",
+                "onlyDependOnLibsWithTags": ["scope:node-shared", "scope:any-shared", "scope:node-external"]
+              },
+              {
+                "sourceTag": "scope:mixer-browser-desktop",
+                "onlyDependOnLibsWithTags": [
+                  "scope:mixer-browser-desktop",
+                  "scope:shared",
+                  "scope:any-shared",
+                  "scope:external"
+                ]
+              },
+              {
+                "sourceTag": "scope:admin",
+                "onlyDependOnLibsWithTags": ["scope:admin", "scope:shared", "scope:any-shared"]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:any-shared", "scope:external"]
+              },
+              {
+                "sourceTag": "scope:any-shared",
+                "onlyDependOnLibsWithTags": ["scope:any-shared"]
+              },
+              {
+                "sourceTag": "platform:web",
+                "onlyDependOnLibsWithTags": ["platform:web", "platform:any"]
+              },
+              {
+                "sourceTag": "platform:node",
+                "onlyDependOnLibsWithTags": ["platform:node", "platform:any"]
+              },
+              {
+                "sourceTag": "platform:any",
+                "onlyDependOnLibsWithTags": ["platform:any"]
+              },
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
             ]
           }
         ]
