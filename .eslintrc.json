@@ -17,7 +17,7 @@
                 "onlyDependOnLibsWithTags": [
                   "type:feature",
                   "type:worker",
-                  "type:designs",
+                  "type:theme",
                   "type:models",
                   "type:fns",
                   "type:utils",

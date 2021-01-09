@@ -14,7 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tor/movies/feature-app": ["libs/movies/feature-app/src/index.ts"],
+      "@tor/movies/feature-login": ["libs/movies/feature-login/src/index.ts"],
+      "@tor/movies/feature-dashboard": [
+        "libs/movies/feature-dashboard/src/index.ts"
+      ],
+      "@tor/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@tor/shared/actions": ["libs/shared/actions/src/index.ts"],
+      "@tor/shared/selectors": ["libs/shared/selectors/src/index.ts"],
+      "@tor/shared/models": ["libs/shared/models/src/index.ts"],
+      "@tor/shared/fns": ["libs/shared/fns/src/index.ts"],
+      "@tor/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@tor/shared/theme": ["libs/shared/theme/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

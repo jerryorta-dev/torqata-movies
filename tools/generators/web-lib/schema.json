@@ -20,7 +20,7 @@
       "description": "Type of library",
       "enum": [
         "app",
-        "designs",
+        "theme",
         "feature",
         "shared",
         "ui",
