@@ -20,7 +20,7 @@
             "styles": ["apps/movies/src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/theme/src/lib/theming/theme-light"]
+              "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
             }
           },
           "configurations": {
