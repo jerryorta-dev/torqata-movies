@@ -18,7 +18,10 @@
             "aot": true,
             "assets": ["apps/movies/src/favicon.ico", "apps/movies/src/assets"],
             "styles": ["apps/movies/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
+            }
           },
           "configurations": {
             "production": {

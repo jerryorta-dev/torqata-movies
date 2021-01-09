@@ -1,0 +1,44 @@
+@import './variables';
+
+@mixin push($name, $direction: '') {
+  .#{$name} {
+    margin#{$direction}: 16px;
+  }
+  .#{$name}-xxl {
+    margin#{$direction}: 56px;
+  }
+  .#{$name}-xl {
+    margin#{$direction}: 48px;
+  }
+  .#{$name}-lg {
+    margin#{$direction}: 32px;
+  }
+  .#{$name}-md {
+    margin#{$direction}: 24px;
+  }
+  .#{$name}-sm {
+    margin#{$direction}: 8px;
+  }
+  .#{$name}-xs {
+    margin#{$direction}: 4px;
+  }
+  .#{$name}-none {
+    margin#{$direction}: 0;
+  }
+
+  @for $i from 1 through $total-increments {
+    .#{$name}-#{$i} {
+      margin#{$direction}: #{$i}px;
+    }
+  }
+}
+
+@mixin pushing-utilities() {
+  body {
+    @include push(push);
+    @include push(push, -bottom);
+    @include push(push, -top);
+    @include push(push, -left);
+    @include push(push, -right);
+  }
+}

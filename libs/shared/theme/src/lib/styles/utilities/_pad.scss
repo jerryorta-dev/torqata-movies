@@ -1,0 +1,44 @@
+@import 'variables';
+
+@mixin pad($name, $direction: '') {
+  .#{$name} {
+    padding#{$direction}: 16px;
+  }
+  .#{$name}-xxl {
+    padding#{$direction}: 56px;
+  }
+  .#{$name}-xl {
+    padding#{$direction}: 48px;
+  }
+  .#{$name}-lg {
+    padding#{$direction}: 32px;
+  }
+  .#{$name}-md {
+    padding#{$direction}: 24px;
+  }
+  .#{$name}-sm {
+    padding#{$direction}: 8px;
+  }
+  .#{$name}-xs {
+    padding#{$direction}: 4px;
+  }
+  .#{$name}-none {
+    padding#{$direction}: 0;
+  }
+
+  @for $i from 1 through $total-increments {
+    .#{$name}-#{$i} {
+      padding#{$direction}: #{$i}px;
+    }
+  }
+}
+
+@mixin padding-utilities() {
+  body {
+    @include pad(pad);
+    @include pad(pad-bottom, -bottom);
+    @include pad(pad-top, -top);
+    @include pad(pad-left, -left);
+    @include pad(pad-right, -right);
+  }
+}
