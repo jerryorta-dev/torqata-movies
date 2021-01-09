@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+./data/*.csv
+!./data/*.zip
+
 # compiled output
 /dist
 /tmp
@@ -37,6 +40,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-apps/firebase/sample-data/data/*.csv
-!apps/firebase/sample-data/data/*.zip
