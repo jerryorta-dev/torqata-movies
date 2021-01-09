@@ -24,11 +24,41 @@
   },
   "projects": {
     "movies": {
-      "tags": []
+      "tags": ["type:app", "scope:movies", "platform:web"]
     },
     "movies-e2e": {
       "tags": [],
       "implicitDependencies": ["movies"]
+    },
+    "movies-feature-app": {
+      "tags": ["type:feature", "scope:movies", "platform:web"]
+    },
+    "movies-feature-login": {
+      "tags": ["type:feature", "scope:movies", "platform:web"]
+    },
+    "movies-feature-dashboard": {
+      "tags": ["type:feature", "scope:movies", "platform:web"]
+    },
+    "shared-data-access": {
+      "tags": ["type:data-access", "scope:shared", "platform:web"]
+    },
+    "shared-actions": {
+      "tags": ["type:actions", "scope:shared", "platform:web"]
+    },
+    "shared-selectors": {
+      "tags": ["type:selectors", "scope:shared", "platform:web"]
+    },
+    "shared-models": {
+      "tags": ["type:models", "scope:shared", "platform:web"]
+    },
+    "shared-fns": {
+      "tags": ["type:fns", "scope:shared", "platform:web"]
+    },
+    "shared-ui": {
+      "tags": ["type:ui", "scope:shared", "platform:web"]
+    },
+    "shared-theme": {
+      "tags": ["type:theme", "scope:shared", "platform:web"]
     }
   }
 }

@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "lib",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library Name",
+      "default": null,
+      "x-prompt": "Library name?"
+    },
+    "directory": {
+      "type": "string",
+      "description": "Directory Path",
+      "default": null,
+      "x-prompt": "What is the directory path? ( Scope is a directory, do not include 'libs', scope, and library name in path. )"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of library",
+      "enum": [
+        "app",
+        "theme",
+        "feature",
+        "shared",
+        "ui",
+        "data-access",
+        "selectors",
+        "utils",
+        "fns",
+        "models",
+        "actions",
+        "worker",
+        "external"
+      ],
+      "default": "feature",
+      "x-prompt": "What type of library is it?"
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope of library",
+      "enum": ["movies", "shared", "external"],
+      "default": "movies",
+      "x-prompt": "What app does this library belong to?"
+    },
+    "publishable": {
+      "type": "boolean",
+      "default": false,
+      "description": "Generate a publishable library.",
+      "x-prompt": "Generate a publishable library?"
+    },
+    "buildable": {
+      "type": "boolean",
+      "default": true,
+      "description": "Generate a Buildable library.",
+      "x-prompt": "Generate a Buildable library?"
+    }
+  },
+  "required": ["name"]
+}
