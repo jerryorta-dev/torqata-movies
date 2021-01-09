@@ -5,7 +5,7 @@
   "scripts": {
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
     "firebase:deploy": "yarn build && cd apps/firebase && firebase use torqata-movies && firebase deploy",
-    "install": "yarn install --frozen-lockfile",
+    "install.github.action": "yarn install --frozen-lockfile",
     "install.global": "bash scripts/install.global.sh",
     "//": "Begin NRWL Commands",
     "ng": "nx",
