@@ -1,4 +1,6 @@
 
+export const accountFeatureKey = 'account';
+
 export interface AccountState {
   isLoggedIn: boolean,
   account: {
