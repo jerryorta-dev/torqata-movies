@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { logOut } from '@tor/shared/actions';
 import { selectAccountPhotoUrl } from '@tor/shared/selectors';

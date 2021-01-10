@@ -5,12 +5,10 @@ import {
   AppState,
   initialAccountState,
   initialWebsocketRegistryState,
-  netflixTitlesesFeatureKey,
 } from '@tor/shared/models';
+import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
-import { AccountFirebaseService } from './+account/account-firebase.service';
-import { netflixTitlesReducer } from './+netfix/netflix-titles.reducer';
 import { websocketRegistryReducer } from './+websocket-registry/websocket-registry.reducer';
 
 @NgModule({
@@ -36,7 +34,6 @@ import { websocketRegistryReducer } from './+websocket-registry/websocket-regist
       }
     ),
     EffectsModule.forRoot([AccountEffects]),
-    StoreModule.forFeature(netflixTitlesesFeatureKey, netflixTitlesReducer),
   ],
   providers: [AccountFirebaseService],
 })

@@ -35,6 +35,10 @@ export class AccountEffects {
     private store: Store,
     private accountFirebase: AccountFirebaseService
   ) {
+    this.watchAuth();
+  }
+
+  watchAuth() {
     /**
      * Listen for firestore auth state changes when logged or logging in.
      *
