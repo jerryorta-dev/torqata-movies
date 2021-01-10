@@ -16,18 +16,11 @@
             "polyfills": "apps/movies/src/polyfills.ts",
             "tsConfig": "apps/movies/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/movies/src/favicon.ico",
-              "apps/movies/src/assets"
-            ],
-            "styles": [
-              "apps/movies/src/styles.scss"
-            ],
+            "assets": ["apps/movies/src/favicon.ico", "apps/movies/src/assets"],
+            "styles": ["apps/movies/src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/theme/src/lib/theming/light-theme"
-              ]
+              "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
             }
           },
           "configurations": {
@@ -88,9 +81,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/movies"
-          ],
+          "outputs": ["coverage/apps/movies"],
           "options": {
             "jestConfig": "apps/movies/jest.config.js",
             "passWithNoTests": true
@@ -119,48 +110,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/movies-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "movies-feature-app": {
-      "projectType": "library",
-      "root": "libs/movies/feature-app",
-      "sourceRoot": "libs/movies/feature-app/src",
-      "prefix": "tor",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/movies/feature-app/tsconfig.lib.json",
-            "project": "libs/movies/feature-app/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/movies/feature-app/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movies/feature-app/src/**/*.ts",
-              "libs/movies/feature-app/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/movies/feature-app"
-          ],
-          "options": {
-            "jestConfig": "libs/movies/feature-app/jest.config.js",
-            "passWithNoTests": true
+            "lintFilePatterns": ["apps/movies-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -194,9 +144,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/movies/feature-login"
-          ],
+          "outputs": ["coverage/libs/movies/feature-login"],
           "options": {
             "jestConfig": "libs/movies/feature-login/jest.config.js",
             "passWithNoTests": true
@@ -233,9 +181,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/movies/feature-dashboard"
-          ],
+          "outputs": ["coverage/libs/movies/feature-dashboard"],
           "options": {
             "jestConfig": "libs/movies/feature-dashboard/jest.config.js",
             "passWithNoTests": true
@@ -272,9 +218,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/data-access"
-          ],
+          "outputs": ["coverage/libs/shared/data-access"],
           "options": {
             "jestConfig": "libs/shared/data-access/jest.config.js",
             "passWithNoTests": true
@@ -311,9 +255,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/actions"
-          ],
+          "outputs": ["coverage/libs/shared/actions"],
           "options": {
             "jestConfig": "libs/shared/actions/jest.config.js",
             "passWithNoTests": true
@@ -350,9 +292,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/selectors"
-          ],
+          "outputs": ["coverage/libs/shared/selectors"],
           "options": {
             "jestConfig": "libs/shared/selectors/jest.config.js",
             "passWithNoTests": true
@@ -389,9 +329,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/models"
-          ],
+          "outputs": ["coverage/libs/shared/models"],
           "options": {
             "jestConfig": "libs/shared/models/jest.config.js",
             "passWithNoTests": true
@@ -428,9 +366,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/fns"
-          ],
+          "outputs": ["coverage/libs/shared/fns"],
           "options": {
             "jestConfig": "libs/shared/fns/jest.config.js",
             "passWithNoTests": true
@@ -467,9 +403,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui"
-          ],
+          "outputs": ["coverage/libs/shared/ui"],
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -506,9 +440,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/theme"
-          ],
+          "outputs": ["coverage/libs/shared/theme"],
           "options": {
             "jestConfig": "libs/shared/theme/jest.config.js",
             "passWithNoTests": true
@@ -518,7 +450,7 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ngrx/schematics",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "yarn",
     "analytics": false
   },
