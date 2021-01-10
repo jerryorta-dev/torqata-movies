@@ -521,6 +521,11 @@
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
+      "displayBlock": true,
+      "style": "scss"
+    },
+    "@schematics/angular:component": {
+      "displayBlock": true,
       "style": "scss"
     }
   },

@@ -17,6 +17,13 @@ export class AccountEffects {
         ofType(logOut),
         tap(() => {
           this.router.navigate([CommonAppRouts.LOGIN]);
+
+          firebase
+            .auth()
+            .signOut()
+            .then(() => {
+              // noop
+            });
         })
       ),
     { dispatch: false }

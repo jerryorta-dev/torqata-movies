@@ -7,5 +7,15 @@ export const selectAccountState = createFeatureSelector<AccountState>(
 
 export const selectIsLoggedIn = createSelector(
   selectAccountState,
-  (state: AccountState) => state.isLoggedIn
+  (state: AccountState): boolean => state.isLoggedIn
+);
+
+export const selectAccountPhotoUrl = createSelector(
+  selectAccountState,
+  (state: AccountState): string => {
+    if (state && state.account && state.account.photoURL) {
+      return state.account.photoURL;
+    }
+    return '';
+  }
 );
