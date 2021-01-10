@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/shared/fns',
     '<rootDir>/libs/shared/ui',
     '<rootDir>/libs/shared/theme',
+    '<rootDir>/libs/shared/utils',
   ],
 };

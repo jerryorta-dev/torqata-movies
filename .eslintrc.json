@@ -88,12 +88,10 @@
               {
                 "sourceTag": "type:selectors",
                 "onlyDependOnLibsWithTags": [
-                  "type:utils",
                   "type:fns",
                   "type:models",
                   "type:global",
                   "type:external",
-                  "type:any-utils",
                   "type:any-fns",
                   "type:any-external",
                   "type:any-models"
@@ -106,6 +104,7 @@
                   "type:models",
                   "type:global",
                   "type:external",
+                  "type:selectors",
                   "type:any-utils",
                   "type:any-fns",
                   "type:any-external",

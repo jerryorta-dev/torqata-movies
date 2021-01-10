@@ -27,7 +27,7 @@ const reducer = createReducer(
   on(websocketIsConnectedAction, (state, action) => {
     // console.log(action);
     if (state.entities[action.id]) {
-      state.entities[action.id].connected = true;
+      (<ConnectionService>state.entities[action.id]).connected = true;
       state.allConnected = keysAreTruthyInEntity(state.entities, 'connected');
     }
 
@@ -38,7 +38,7 @@ const reducer = createReducer(
   on(websocketIsDisconnectedAction, (state, action) => {
     // console.log(action);
     if (state.entities[action.id]) {
-      state.entities[action.id].connected = false;
+      (<ConnectionService>state.entities[action.id]).connected = false;
       state.allConnected = false;
     }
 
@@ -73,7 +73,7 @@ const reducer = createReducer(
   on(serviceLoggedOutAction, (state, action) => {
     state.allConnected = false;
 
-    Object.values(state.entities).map((entity: ConnectionService) => {
+    (<ConnectionService[]>Object.values(state.entities)).map((entity: ConnectionService) => {
       entity.connected = false;
       return entity;
     });

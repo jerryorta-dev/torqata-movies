@@ -26,7 +26,8 @@
       "@tor/shared/models": ["libs/shared/models/src/index.ts"],
       "@tor/shared/fns": ["libs/shared/fns/src/index.ts"],
       "@tor/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@tor/shared/theme": ["libs/shared/theme/src/index.ts"]
+      "@tor/shared/theme": ["libs/shared/theme/src/index.ts"],
+      "@tor/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

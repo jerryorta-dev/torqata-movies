@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CommonAppRouts } from '@tor/shared/models';
+import { AuthGuardService } from '@tor/shared/utils';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
+    canActivate: [AuthGuardService],
   },
   {
-    path: 'analyze',
+    path: CommonAppRouts.DASHBOARD,
     loadChildren: () =>
     import(
       'libs/movies/feature-dashboard/src/lib/movies-feature-dashboard.module'
-      ).then((m) => m.MoviesFeatureDashboardModule)
+      ).then((m) => m.MoviesFeatureDashboardModule),
+    canActivate: [AuthGuardService],
   },
 
   {
-    path: 'login',
+    path: CommonAppRouts.LOGIN,
     loadChildren: () =>
       import(
         'libs/movies/feature-login/src/lib/movies-feature-login.module'

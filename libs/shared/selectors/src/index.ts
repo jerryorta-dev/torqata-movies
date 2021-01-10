@@ -1,1 +1,1 @@
-export * from './lib/shared-selectors.module';
+export * from './lib/account.selectors';

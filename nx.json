@@ -56,6 +56,9 @@
     },
     "shared-theme": {
       "tags": ["type:theme", "scope:shared", "platform:web"]
+    },
+    "shared-utils": {
+      "tags": ["type:utils", "scope:shared", "platform:web"]
     }
   }
 }
