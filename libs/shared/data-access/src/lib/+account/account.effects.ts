@@ -34,7 +34,6 @@ export class AccountEffects {
      */
     firebase.auth().onAuthStateChanged((user) => {
       if (user && user.email) {
-        console.log(user);
         /**
          * Hash the user's email into a sha256 string and
          * use as an id for the user's account in firestore.

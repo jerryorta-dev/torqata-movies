@@ -26,6 +26,8 @@ export class AccountFirebaseService {
                 observer.next(account);
               }
             );
+          } else {
+            observer.next(account);
           }
         });
       } else {
