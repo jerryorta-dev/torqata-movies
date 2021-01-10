@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'movies-feature-app',
+  displayName: 'shared-utils',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/movies/feature-app',
+  coverageDirectory: '../../../coverage/libs/shared/utils',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

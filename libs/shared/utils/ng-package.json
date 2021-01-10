@@ -1,6 +1,6 @@
 {
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../../dist/libs/movies/feature-app",
+  "dest": "../../../dist/libs/shared/utils",
   "lib": {
     "entryFile": "src/index.ts"
   }

@@ -1,33 +1,33 @@
 @import './variables';
 
-@mixin push($name, $direction: '') {
-  .#{$name} {
+@mixin push($direction: '') {
+  .push#{$direction} {
     margin#{$direction}: 16px;
   }
-  .#{$name}-xxl {
+  .push#{$direction}-xxl {
     margin#{$direction}: 56px;
   }
-  .#{$name}-xl {
+  .push#{$direction}-xl {
     margin#{$direction}: 48px;
   }
-  .#{$name}-lg {
+  .push#{$direction}-lg {
     margin#{$direction}: 32px;
   }
-  .#{$name}-md {
+  .push#{$direction}-md {
     margin#{$direction}: 24px;
   }
-  .#{$name}-sm {
+  .push#{$direction}-sm {
     margin#{$direction}: 8px;
   }
-  .#{$name}-xs {
+  .push#{$direction}-xs {
     margin#{$direction}: 4px;
   }
-  .#{$name}-none {
+  .push#{$direction}-none {
     margin#{$direction}: 0;
   }
 
   @for $i from 1 through $total-increments {
-    .#{$name}-#{$i} {
+    .push#{$direction}-#{$i} {
       margin#{$direction}: #{$i}px;
     }
   }
@@ -35,10 +35,10 @@
 
 @mixin pushing-utilities() {
   body {
-    @include push(push);
-    @include push(push, -bottom);
-    @include push(push, -top);
-    @include push(push, -left);
-    @include push(push, -right);
+    @include push();
+    @include push(-bottom);
+    @include push(-top);
+    @include push(-left);
+    @include push(-right);
   }
 }

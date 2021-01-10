@@ -1,3 +1,5 @@
+import { prodEnvironment } from '@tor/shared/models';
+
 export const environment = {
-  production: true,
+  ...prodEnvironment,
 };

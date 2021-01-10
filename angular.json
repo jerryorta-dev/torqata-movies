@@ -21,7 +21,16 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "firebase",
+              "firebase/app",
+              "firebase/database",
+              "firebase/firestore",
+              "firebase/functions",
+              "firebase/messaging",
+              "firebase/storage"
+            ]
           },
           "configurations": {
             "production": {
@@ -111,43 +120,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/movies-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "movies-feature-app": {
-      "projectType": "library",
-      "root": "libs/movies/feature-app",
-      "sourceRoot": "libs/movies/feature-app/src",
-      "prefix": "tor",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/movies/feature-app/tsconfig.lib.json",
-            "project": "libs/movies/feature-app/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/movies/feature-app/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movies/feature-app/src/**/*.ts",
-              "libs/movies/feature-app/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/movies/feature-app"],
-          "options": {
-            "jestConfig": "libs/movies/feature-app/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }
@@ -480,6 +452,43 @@
           "outputs": ["coverage/libs/shared/theme"],
           "options": {
             "jestConfig": "libs/shared/theme/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-utils": {
+      "projectType": "library",
+      "root": "libs/shared/utils",
+      "sourceRoot": "libs/shared/utils/src",
+      "prefix": "tor",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/utils/tsconfig.lib.json",
+            "project": "libs/shared/utils/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/utils/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/utils/src/**/*.ts",
+              "libs/shared/utils/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/utils"],
+          "options": {
+            "jestConfig": "libs/shared/utils/jest.config.js",
             "passWithNoTests": true
           }
         }

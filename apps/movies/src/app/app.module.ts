@@ -1,18 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { SharedDataAccessModule } from '@tor/shared/data-access';
+import { AuthGuardService } from '@tor/shared/utils';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import firebase from 'firebase';
+
+firebase.initializeApp(environment.firebase);
+firebase
+  .firestore()
+  .enablePersistence({ synchronizeTabs: true })
+  .then(() => {
+    // noop
+  });
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     BrowserAnimationsModule,
+
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+
+    // Data - Ngrx Reducers, Effects, Firebase Connections
+    SharedDataAccessModule,
+
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    // To get environment in lazy loaded modules
+    {
+      provide: 'ENVIRONMENT',
+      useValue: environment,
+    },
+
+    AuthGuardService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

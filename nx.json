@@ -30,9 +30,6 @@
       "tags": [],
       "implicitDependencies": ["movies"]
     },
-    "movies-feature-app": {
-      "tags": ["type:feature", "scope:movies", "platform:web"]
-    },
     "movies-feature-login": {
       "tags": ["type:feature", "scope:movies", "platform:web"]
     },
@@ -59,6 +56,9 @@
     },
     "shared-theme": {
       "tags": ["type:theme", "scope:shared", "platform:web"]
+    },
+    "shared-utils": {
+      "tags": ["type:utils", "scope:shared", "platform:web"]
     }
   }
 }

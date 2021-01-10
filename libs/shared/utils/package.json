@@ -1,5 +1,5 @@
 {
-  "name": "@tor/movies/feature-app",
+  "name": "@tor/shared/utils",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^11.0.6",
