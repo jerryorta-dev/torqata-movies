@@ -1,0 +1,12 @@
+<div class="mat-elevation-z8">
+  <button mat-button class="btn-logout">
+    <div
+      class="photo-url push-right-4"
+      *ngIf="displayURL$ | ngrxPush"
+      (click)="logout()"
+    >
+      <img [src]="displayURL$ | ngrxPush" alt="user image" />
+    </div>
+    <span>Logout</span>
+  </button>
+</div>

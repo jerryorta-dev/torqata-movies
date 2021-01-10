@@ -17,6 +17,13 @@ export class AccountEffects {
         ofType(logOut),
         tap(() => {
           this.router.navigate([CommonAppRouts.LOGIN]);
+
+          firebase
+            .auth()
+            .signOut()
+            .then(() => {
+              // noop
+            });
         })
       ),
     { dispatch: false }
@@ -28,13 +35,16 @@ export class AccountEffects {
     private store: Store,
     private accountFirebase: AccountFirebaseService
   ) {
+    this.watchAuth();
+  }
+
+  watchAuth() {
     /**
      * Listen for firestore auth state changes when logged or logging in.
      *
      */
     firebase.auth().onAuthStateChanged((user) => {
       if (user && user.email) {
-        console.log(user);
         /**
          * Hash the user's email into a sha256 string and
          * use as an id for the user's account in firestore.

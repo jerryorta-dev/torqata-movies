@@ -6,9 +6,9 @@ import {
   initialAccountState,
   initialWebsocketRegistryState,
 } from '@tor/shared/models';
+import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
-import { AccountFirebaseService } from './+account/account-firebase.service';
 import { websocketRegistryReducer } from './+websocket-registry/websocket-registry.reducer';
 
 @NgModule({

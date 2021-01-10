@@ -10,7 +10,7 @@ const firestorePath = 'movies/netflix/titles';
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://spout-dev.firebaseio.com',
+  databaseURL: 'https://torqata-movies.firebaseapp.com',
 });
 
 const devDb = admin.firestore();
@@ -22,7 +22,7 @@ data.forEach((movieTitle) => {
   if (movieTitle) {
     devDb
       .collection(firestorePath)
-      .doc(movieTitle.show_id)
+      .doc(movieTitle.show_id.toString(l))
       .set(movieTitle)
       .then(() => {
         console.log('movie tile: ', movieTitle.title, 'written');
