@@ -22,7 +22,7 @@ data.forEach((movieTitle) => {
   if (movieTitle) {
     devDb
       .collection(firestorePath)
-      .doc(movieTitle.show_id.toString())
+      .doc(movieTitle.show_id.toString(l))
       .set(movieTitle)
       .then(() => {
         console.log('movie tile: ', movieTitle.title, 'written');
