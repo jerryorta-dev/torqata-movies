@@ -2,13 +2,13 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+
 @import 'light-theme';
-// Plus imports for other components in your app.
+
 
 @include mat-core($custom-typography);
 @include angular-material-theme($light-theme);
 
-/* You can add global styles to this file, and also import other style files */
 @import 'libs/shared/theme/src/lib/styles/ui-styles';
 @include ui-styles($light-theme);
 
@@ -23,4 +23,6 @@ body {
   overflow: hidden;
   color: $light-black-light;
   background: mat-color($background, background);
+
+
 }

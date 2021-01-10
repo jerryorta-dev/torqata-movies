@@ -1,33 +1,33 @@
 @import 'variables';
 
-@mixin pull($name, $direction: '') {
-  .#{$name}-xxl {
+@mixin pull($direction: '') {
+  .pull#{$direction}-xxl {
     margin#{$direction}: -56px;
   }
-  .#{$name}-xl {
+  .pull#{$direction}-xl {
     margin#{$direction}: -48px;
   }
-  .#{$name}-lg {
+  .pull#{$direction}-lg {
     margin#{$direction}: -32px;
   }
-  .#{$name}-md {
+  .pull#{$direction}-md {
     margin#{$direction}: -24px;
   }
-  .#{$name} {
+  .pull#{$direction} {
     margin#{$direction}: -16px;
   }
-  .#{$name}-sm {
+  .pull#{$direction}-sm {
     margin#{$direction}: -8px;
   }
-  .#{$name}-xs {
+  .pull#{$direction}-xs {
     margin#{$direction}: -4px;
   }
-  .#{$name}-none {
+  .pull#{$direction}-none {
     margin#{$direction}: 0;
   }
 
   @for $i from 1 through $total-increments {
-    .#{$name}-#{$i} {
+    .pull#{$direction}-#{$i} {
       margin#{$direction}: -#{$i}px;
     }
   }
@@ -35,10 +35,10 @@
 
 @mixin pulling-utilities() {
   body {
-    @include pull(pull);
-    @include pull(pull-bottom, -bottom);
-    @include pull(pull-top, -top);
-    @include pull(pull-left, -left);
-    @include pull(pull-right, -right);
+    @include pull();
+    @include pull(-bottom);
+    @include pull(-top);
+    @include pull(-left);
+    @include pull(-right);
   }
 }

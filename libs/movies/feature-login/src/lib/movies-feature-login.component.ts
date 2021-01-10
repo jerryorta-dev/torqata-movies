@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SvgSpriteLoaderService } from '@tor/shared/utils';
 
 @Component({
   selector: 'tor-movies-feature-login',
@@ -6,11 +7,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./movies-feature-login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MoviesFeatureLoginComponent implements OnInit {
+export class MoviesFeatureLoginComponent  {
 
-  constructor() { }
+  constructor(private svgLoader: SvgSpriteLoaderService) {
+    this.svgLoader.addSvgIconSet();
+  }
 
-  ngOnInit(): void {
+  signInWithGoogle() {
+    console.log('login with google');
   }
 
 }

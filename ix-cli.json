@@ -1,0 +1,50 @@
+{
+  "svg": [
+    {
+      "tsReference": "apps/movies/src/environments/svgIconAssets.ts",
+      "sets": [
+        {
+          "setName": "icon",
+          "version": "v0",
+          "outDir": "apps/movies/src/assets/svg",
+          "tsSpriteFilePath": "libs/shared/utils/src/lib/svgloader/svg-sprite.ts",
+          "pathFromHTML": "assets/svg",
+          "srcFiles": {
+            "design/signin-icons": {
+              "facebook.svg": {
+                "id": "facebook"
+              },
+              "github.svg": {
+                "id": "github"
+              },
+              "google.svg": {
+                "id": "google"
+              },
+              "mail.svg": {
+                "id": "mail"
+              },
+              "microsoft.svg": {
+                "id": "microsoft"
+              },
+              "oidc.svg": {
+                "id": "oidc"
+              },
+              "phone.svg": {
+                "id": "phone"
+              },
+              "saml.svg": {
+                "id": "saml"
+              },
+              "twitter.svg": {
+                "id": "twitter"
+              },
+              "yahoo.svg": {
+                "id": "yahoo"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
