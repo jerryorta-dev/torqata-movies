@@ -13,8 +13,8 @@ const routes: Routes = [
   {
     path: CommonAppRouts.DASHBOARD,
     loadChildren: () =>
-    import(
-      'libs/movies/feature-dashboard/src/lib/movies-feature-dashboard.module'
+      import(
+        'libs/movies/feature-dashboard/src/lib/movies-feature-dashboard.module'
       ).then((m) => m.MoviesFeatureDashboardModule),
     canActivate: [AuthGuardService],
   },
@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () =>
       import(
         'libs/movies/feature-login/src/lib/movies-feature-login.module'
-        ).then((m) => m.MoviesFeatureLoginModule)
+      ).then((m) => m.MoviesFeatureLoginModule),
   },
 
   {
@@ -35,10 +35,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules,
-    relativeLinkResolution: 'legacy',
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

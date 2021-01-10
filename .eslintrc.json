@@ -194,11 +194,21 @@
               },
               {
                 "sourceTag": "type:global",
-                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-models", "type:external"]
+                "onlyDependOnLibsWithTags": [
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-models",
+                  "type:external"
+                ]
               },
               {
                 "sourceTag": "type:node-model",
-                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-models", "type:any-external"]
+                "onlyDependOnLibsWithTags": [
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-models",
+                  "type:any-external"
+                ]
               },
               {
                 "sourceTag": "type:actions",
@@ -206,15 +216,27 @@
               },
               {
                 "sourceTag": "type:worker",
-                "onlyDependOnLibsWithTags": ["type:any-utils", "type:any-fns", "type:any-external", "type:any-models"]
+                "onlyDependOnLibsWithTags": [
+                  "type:any-utils",
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
               },
               {
                 "sourceTag": "type:any-utils",
-                "onlyDependOnLibsWithTags": ["type:any-fns", "type:any-external", "type:any-models"]
+                "onlyDependOnLibsWithTags": [
+                  "type:any-fns",
+                  "type:any-external",
+                  "type:any-models"
+                ]
               },
               {
                 "sourceTag": "type:any-fns",
-                "onlyDependOnLibsWithTags": ["type:any-external", "type:any-models"]
+                "onlyDependOnLibsWithTags": [
+                  "type:any-external",
+                  "type:any-models"
+                ]
               },
               {
                 "sourceTag": "scope:mixer-electron",
@@ -227,7 +249,11 @@
               },
               {
                 "sourceTag": "scope:node-shared",
-                "onlyDependOnLibsWithTags": ["scope:node-shared", "scope:any-shared", "scope:node-external"]
+                "onlyDependOnLibsWithTags": [
+                  "scope:node-shared",
+                  "scope:any-shared",
+                  "scope:node-external"
+                ]
               },
               {
                 "sourceTag": "scope:mixer-browser-desktop",
@@ -240,11 +266,19 @@
               },
               {
                 "sourceTag": "scope:admin",
-                "onlyDependOnLibsWithTags": ["scope:admin", "scope:shared", "scope:any-shared"]
+                "onlyDependOnLibsWithTags": [
+                  "scope:admin",
+                  "scope:shared",
+                  "scope:any-shared"
+                ]
               },
               {
                 "sourceTag": "scope:shared",
-                "onlyDependOnLibsWithTags": ["scope:shared", "scope:any-shared", "scope:external"]
+                "onlyDependOnLibsWithTags": [
+                  "scope:shared",
+                  "scope:any-shared",
+                  "scope:external"
+                ]
               },
               {
                 "sourceTag": "scope:any-shared",

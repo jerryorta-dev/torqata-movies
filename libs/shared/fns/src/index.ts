@@ -1,1 +1,2 @@
-export * from './lib/shared-fns.module';
+export * from './lib/crypto-hash-wrapper';
+export * from './lib/firebase-paths';

@@ -18,9 +18,8 @@ const firebase: FirebaseConfig = {
   projectId: 'torqata-movies',
   storageBucket: 'torqata-movies.appspot.com',
   messagingSenderId: '1055169738808',
-  appId: '1:1055169738808:web:592348b90f72c306a88ecd'
-}
-
+  appId: '1:1055169738808:web:592348b90f72c306a88ecd',
+};
 
 export const devEnvironment: IEnvironment = {
   production: false,
@@ -30,4 +29,4 @@ export const devEnvironment: IEnvironment = {
 export const prodEnvironment: IEnvironment = {
   production: true,
   firebase,
-}
+};

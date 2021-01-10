@@ -21,7 +21,16 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "firebase",
+              "firebase/app",
+              "firebase/database",
+              "firebase/firestore",
+              "firebase/functions",
+              "firebase/messaging",
+              "firebase/storage"
+            ]
           },
           "configurations": {
             "production": {

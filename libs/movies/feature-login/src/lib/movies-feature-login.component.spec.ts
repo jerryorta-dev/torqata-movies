@@ -8,9 +8,8 @@ describe('MoviesFeatureLoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MoviesFeatureLoginComponent ]
-    })
-    .compileComponents();
+      declarations: [MoviesFeatureLoginComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

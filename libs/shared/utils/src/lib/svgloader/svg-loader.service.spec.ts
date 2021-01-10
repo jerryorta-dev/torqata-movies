@@ -9,7 +9,10 @@ describe('IxSvgLoaderService', () => {
     });
   });
 
-  it('should be created', inject([SvgSpriteLoaderService], ( service: SvgSpriteLoaderService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created', inject(
+    [SvgSpriteLoaderService],
+    (service: SvgSpriteLoaderService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });

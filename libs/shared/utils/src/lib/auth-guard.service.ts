@@ -1,5 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+} from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { CommonAppRouts } from '@tor/shared/models';
 import { selectIsLoggedIn } from '@tor/shared/selectors';
@@ -7,15 +12,14 @@ import { Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuardService implements CanActivate {
-
   constructor(
     private store: Store,
     private zone: NgZone,
-    private router: Router,
-  ) { }
+    private router: Router
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,

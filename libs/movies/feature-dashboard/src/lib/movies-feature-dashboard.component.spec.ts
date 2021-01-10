@@ -8,9 +8,8 @@ describe('MoviesFeatureDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MoviesFeatureDashboardComponent ]
-    })
-    .compileComponents();
+      declarations: [MoviesFeatureDashboardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

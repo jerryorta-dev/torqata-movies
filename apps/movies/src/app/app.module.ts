@@ -6,8 +6,16 @@ import { SharedDataAccessModule } from '@tor/shared/data-access';
 import { AuthGuardService } from '@tor/shared/utils';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+import firebase from 'firebase';
+
+firebase.initializeApp(environment.firebase);
+firebase
+  .firestore()
+  .enablePersistence({ synchronizeTabs: true })
+  .then(() => {
+    // noop
+  });
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +23,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
 
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
 
     // Data - Ngrx Reducers, Effects, Firebase Connections
     SharedDataAccessModule,
@@ -23,7 +34,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
   ],
   providers: [
-
     // To get environment in lazy loaded modules
     {
       provide: 'ENVIRONMENT',

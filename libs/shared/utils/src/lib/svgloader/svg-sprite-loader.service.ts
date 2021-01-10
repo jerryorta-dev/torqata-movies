@@ -10,7 +10,10 @@ import { SVG_SPRITE } from './svg-sprite';
   providedIn: 'root',
 })
 export class SvgSpriteLoaderService {
-  constructor(private _iconRegistry: MatIconRegistry, private _domSanitizer: DomSanitizer) {}
+  constructor(
+    private _iconRegistry: MatIconRegistry,
+    private _domSanitizer: DomSanitizer
+  ) {}
 
   /**
    *
@@ -18,7 +21,9 @@ export class SvgSpriteLoaderService {
    * @param svgSetUrl - url to svg asset set
    */
   addSvgIconSet(): void {
-    this._iconRegistry.addSvgIconSetLiteralInNamespace('icon', this._domSanitizer.bypassSecurityTrustHtml(SVG_SPRITE));
+    this._iconRegistry.addSvgIconSetLiteralInNamespace(
+      'icon',
+      this._domSanitizer.bypassSecurityTrustHtml(SVG_SPRITE)
+    );
   }
-
 }

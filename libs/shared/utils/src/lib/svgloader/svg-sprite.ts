@@ -1,6 +1,5 @@
 /* eslint-disable */
-export const SVG_SPRITE: any =
-  `<svg xmlns:xlink='http://www.w3.org/1999/xlink'><defs><svg id='facebook'
+export const SVG_SPRITE: any = `<svg xmlns:xlink='http://www.w3.org/1999/xlink'><defs><svg id='facebook'
 filename='facebook.svg' viewBox='0 0 120 120' width='120px' height='120px'>
     <!-- Generator: Sketch 3.6 (26304) - http://www.bohemiancoding.com/sketch -->
     <title>facebook_buttn</title>

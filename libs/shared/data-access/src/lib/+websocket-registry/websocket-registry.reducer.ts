@@ -1,23 +1,26 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import {
-  addWebsocketRegistry, addWebsocketRegistrys,
+  addWebsocketRegistry,
+  addWebsocketRegistrys,
   clearWebsocketRegistrys,
   deleteWebsocketRegistry,
   deleteWebsocketRegistrys,
   loadWebsocketRegistrys,
   serviceDoConnectAction,
-  serviceDoDisconnectAction, serviceLoggedOutAction,
+  serviceDoDisconnectAction,
+  serviceLoggedOutAction,
   updateWebsocketRegistry,
   updateWebsocketRegistrys,
   upsertWebsocketRegistry,
   upsertWebsocketRegistrys,
   websocketIsConnectedAction,
-  websocketIsDisconnectedAction
+  websocketIsDisconnectedAction,
 } from '@tor/shared/actions';
 import {
   ConnectionRegistryState,
-  ConnectionService, initialWebsocketRegistryState,
-  websocketRegistryAdapter
+  ConnectionService,
+  initialWebsocketRegistryState,
+  websocketRegistryAdapter,
 } from '@tor/shared/models';
 
 import { keysAreTruthyInEntity } from '@uiux/fn';
@@ -73,10 +76,12 @@ const reducer = createReducer(
   on(serviceLoggedOutAction, (state, action) => {
     state.allConnected = false;
 
-    (<ConnectionService[]>Object.values(state.entities)).map((entity: ConnectionService) => {
-      entity.connected = false;
-      return entity;
-    });
+    (<ConnectionService[]>Object.values(state.entities)).map(
+      (entity: ConnectionService) => {
+        entity.connected = false;
+        return entity;
+      }
+    );
 
     return state;
   }),

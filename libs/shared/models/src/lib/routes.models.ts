@@ -9,4 +9,4 @@ export interface CommonRoutes {
 export const CommonAppRouts: CommonRoutes = {
   DASHBOARD: 'dashboard',
   LOGIN: 'login',
-}
+};

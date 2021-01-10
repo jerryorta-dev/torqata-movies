@@ -23,8 +23,7 @@ export const websocketRegistryAdapter: EntityAdapter<ConnectionService> = create
   ConnectionService
 >();
 
-export const initialWebsocketRegistryState: ConnectionRegistryState =
-  websocketRegistryAdapter.getInitialState(
+export const initialWebsocketRegistryState: ConnectionRegistryState = websocketRegistryAdapter.getInitialState(
   {
     // additional entity state properties
     allConnected: false,
