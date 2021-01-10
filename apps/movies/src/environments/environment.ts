@@ -1,9 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build --prod` replaces `environment.model.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { devEnvironment } from '@tor/shared/models';
+
 export const environment = {
-  production: false,
+  ...devEnvironment,
 };
 
 /*

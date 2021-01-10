@@ -1,1 +1,1 @@
-export * from './lib/shared-actions.module';
+export * from './lib/websocket-registry.actions';
