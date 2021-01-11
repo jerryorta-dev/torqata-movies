@@ -10,7 +10,7 @@
     "s.movies": "ng serve movies",
     "//": "Begin NRWL Commands",
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && bash scripts/install.global.sh",
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build movies --prod",

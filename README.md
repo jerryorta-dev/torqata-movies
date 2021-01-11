@@ -1,9 +1,13 @@
 # TorqataMovies
 
-Hosted on two sites:
+## Hosted on two sites:
 
 - [Firebase](https://torqata-movies.web.app/)
 - [Google App Engine](https://torqata-movies.uc.r.appspot.com/)
+
+## Authentication using firebase
+
+## Data hosted on [algolia](https://www.algolia.com/)
 
 # Build Notes
 

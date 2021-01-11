@@ -7,6 +7,9 @@ import { from, Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { NetflixTitle, PageEventParams } from './netflix.models';
 
+/**
+ * Data maintained in https://www.algolia.com/
+ */
 @Injectable({
   providedIn: 'root',
 })
