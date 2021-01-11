@@ -1,6 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { IEnvironment } from '@tor/shared/models';
-import { SearchClient } from 'algoliasearch/dist/algoliasearch-lite';
+import {
+  SearchClient,
+  SearchIndex,
+} from 'algoliasearch/dist/algoliasearch-lite';
 import algoliasearch from 'algoliasearch/lite';
 
 @Injectable({
@@ -8,18 +11,20 @@ import algoliasearch from 'algoliasearch/lite';
 })
 export class AlgoliaSearchService {
   // TODO obfuscate keys?
-  private client: SearchClient;
+  private searchIndex: SearchIndex;
 
   constructor(@Inject('ENVIRONMENT') private environment: IEnvironment) {
-    this.client = algoliasearch(
+    const _client = algoliasearch(
       this.environment.algolia.appId,
       this.environment.algolia.apiKey
     );
 
-    console.log('foo');
-
-    console.log(this.environment);
+    this.searchIndex = _client.initIndex('prod_torqata_netfix_titles');
   }
 
-  query() {}
+  query(query: string) {
+    this.searchIndex.search(query).then((r) => {
+      console.log(r);
+    });
+  }
 }

@@ -6,12 +6,10 @@ import {
   initialAccountState,
   initialNetflexTitlesState,
   initialWebsocketRegistryState,
-  netflixTitlesesFeatureKey,
 } from '@tor/shared/models';
 import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
-import { netflixTitlesReducer } from './+netfix/netflix-titles.reducer';
 import { websocketRegistryReducer } from './+websocket-registry/websocket-registry.reducer';
 import { AlgoliaSearchService } from './algolia-search.service';
 
@@ -42,8 +40,4 @@ import { AlgoliaSearchService } from './algolia-search.service';
   ],
   providers: [AccountFirebaseService, AlgoliaSearchService],
 })
-export class SharedDataAccessModule {
-  constructor(private algoliaSearch: AlgoliaSearchService) {
-    this.algoliaSearch.query();
-  }
-}
+export class SharedDataAccessModule {}

@@ -1,0 +1,11 @@
+<form [formGroup]="searchFormGroup">
+  <mat-form-field color="primary" floatLabel="always" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      formControlName="query"
+      placeholder="Peter Jackson"
+      autocomplete="off"
+    />
+  </mat-form-field>
+</form>

@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AlgoliaSearchQuery } from '@tor/shared/ui';
 
 @Component({
   selector: 'tor-movies-feature-dashboard',
@@ -6,4 +7,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./movies-feature-dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MoviesFeatureDashboardComponent {}
+export class MoviesFeatureDashboardComponent {
+  onQueryInputChanges(search: AlgoliaSearchQuery) {
+    console.log(search);
+  }
+}
