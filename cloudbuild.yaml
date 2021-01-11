@@ -9,10 +9,4 @@ steps:
 
   # Deploy to google cloud app egnine
   - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      [
-        'app',
-        'deploy',
-        '--version=prod',
-        '--account=1055169738808@cloudbuild.gserviceaccount.com	',
-      ]
+    args: ['app', 'deploy', '--version=prod']
