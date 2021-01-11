@@ -1,7 +1,7 @@
-import { ConnectionRegistryState } from './websocket-registry.models';
 import { AccountState } from './account.model';
+import { NetflixTitlesState } from './netflix.models';
 
 export interface AppState {
   account: AccountState;
-  webSocketRegistry: ConnectionRegistryState;
+  netflixTitles: NetflixTitlesState;
 }

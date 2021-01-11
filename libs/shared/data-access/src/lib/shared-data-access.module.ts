@@ -5,12 +5,10 @@ import {
   AppState,
   initialAccountState,
   initialNetflexTitlesState,
-  initialWebsocketRegistryState,
 } from '@tor/shared/models';
 import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
-import { websocketRegistryReducer } from './+websocket-registry/websocket-registry.reducer';
 import { AlgoliaSearchService } from './algolia-search.service';
 
 @NgModule({
@@ -18,12 +16,10 @@ import { AlgoliaSearchService } from './algolia-search.service';
     StoreModule.forRoot(
       {
         account: accountReducer,
-        webSocketRegistry: websocketRegistryReducer,
       },
       {
         initialState: <AppState>{
           account: initialAccountState,
-          webSocketRegistry: initialWebsocketRegistryState,
           netflixTitles: initialNetflexTitlesState,
         },
         runtimeChecks: {

@@ -20,6 +20,8 @@ export interface NetflixTitles {
 export interface NetflixTitlesState extends EntityState<NetflixTitles> {
   // additional entities state properties
   loading: boolean;
+
+  // Algolia Search Params
 }
 
 export const adapter: EntityAdapter<NetflixTitles> = createEntityAdapter<
