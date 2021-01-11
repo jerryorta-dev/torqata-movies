@@ -1,0 +1,23 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+  - url: /
+    static_files: apps/firebase/public/index.html
+    upload: apps/firebase/public/index.html
+  - url: /
+    static_dir: apps/firebase/public
+  - url: /(.*\..+)$
+    static_files: apps/firebase/public/\1
+    upload: apps/firebase/public/(.*\..+)$
+  # catch all handler to index.html
+  - url: /.*
+    static_files: apps/firebase/public/index.html
+    # static_files: dist/apps/movies/1\
+    upload: apps/firebase/public/index.html
+    # upload: dist/apps/movies/(.*\..+)$
+    # catch all handler to index.html
+
+skip_files:
+  - ^(?!apps)  # Skip any files not in the dist folder

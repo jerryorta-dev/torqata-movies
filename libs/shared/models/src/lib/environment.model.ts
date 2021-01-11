@@ -7,9 +7,15 @@ export interface FirebaseConfig {
   messagingSenderId: string;
 }
 
+export interface AlgoliaSearchKeys {
+  appId: string;
+  apiKey: string;
+}
+
 export interface IEnvironment {
   production: boolean;
   firebase: FirebaseConfig;
+  algolia: AlgoliaSearchKeys;
 }
 
 const firebase: FirebaseConfig = {
@@ -21,12 +27,19 @@ const firebase: FirebaseConfig = {
   appId: '1:1055169738808:web:592348b90f72c306a88ecd',
 };
 
+const algolia: AlgoliaSearchKeys = {
+  appId: 'I90GI1QCV5',
+  apiKey: '888b62bf35eae5dcde229ab55e58d7a4',
+};
+
 export const devEnvironment: IEnvironment = {
   production: false,
   firebase,
+  algolia,
 };
 
 export const prodEnvironment: IEnvironment = {
   production: true,
   firebase,
+  algolia,
 };

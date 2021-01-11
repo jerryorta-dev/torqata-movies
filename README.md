@@ -1,6 +1,9 @@
 # TorqataMovies
 
-See app [Torqata Movies](https://torqata-movies.web.app/)
+Hosted on two sites:
+
+- [Firebase](https://torqata-movies.web.app/)
+- [Google App Engine](https://torqata-movies.uc.r.appspot.com/)
 
 # Build Notes
 

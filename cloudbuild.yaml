@@ -1,0 +1,28 @@
+steps:
+  # Display service account that is used
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      [
+          'config',
+          'list',
+          'account',
+          '--format=value(core.account)',
+      ]
+
+  # Install node packages
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['install.github.action']
+
+  # Build productive files
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['build']
+
+  # Deploy to google cloud app egnine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      [
+        'app',
+        'deploy',
+        '--version=prod',
+        '--account=1055169738808@cloudbuild.gserviceaccount.com',
+      ]
