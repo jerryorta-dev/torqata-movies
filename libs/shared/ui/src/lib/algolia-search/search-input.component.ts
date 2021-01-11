@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { SearchQuery } from './search-input.models';
 
 @Component({
@@ -35,6 +35,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     this.searchFormGroup.valueChanges
       .pipe(
         filter((query: SearchQuery) => query.query.length > 3),
+        debounceTime(300),
         takeUntil(this._onDestroy$)
       )
       .subscribe((query: SearchQuery) => {
