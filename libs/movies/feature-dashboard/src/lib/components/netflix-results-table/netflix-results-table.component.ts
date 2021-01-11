@@ -5,7 +5,15 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { NetflixTitle } from '../../+netfix/netflix.models';
 
 @Component({
@@ -24,10 +32,25 @@ import { NetflixTitle } from '../../+netfix/netflix.models';
     ]),
   ],
 })
-export class NetflixResultsTableComponent {
-  @Input() data: NetflixTitle[] = [];
+export class NetflixResultsTableComponent implements AfterViewInit {
+  @Input()
+  set data(d: NetflixTitle[]) {
+    if (d && d.length) {
+      this.dataSource.data = d;
+    }
+  }
+
+  dataSource = new MatTableDataSource<NetflixTitle>([]);
+
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   expandedElement: NetflixTitle | null = null;
 
   columnsToDisplay = ['title', 'description'];
+
+  ngAfterViewInit() {
+    if (this.paginator) {
+      this.dataSource.paginator = this.paginator;
+    }
+  }
 }
