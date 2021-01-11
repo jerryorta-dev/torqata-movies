@@ -10,7 +10,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "apps/firebase/public",
+            "outputPath": "dist/apps/movies",
             "index": "apps/movies/src/index.html",
             "main": "apps/movies/src/main.ts",
             "polyfills": "apps/movies/src/polyfills.ts",
