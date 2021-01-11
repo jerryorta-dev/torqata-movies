@@ -1,10 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { IEnvironment } from '@tor/shared/models';
-import {
-  SearchClient,
-  SearchIndex,
-} from 'algoliasearch/dist/algoliasearch-lite';
-import algoliasearch from 'algoliasearch/lite';
+import { SearchIndex } from 'algoliasearch/dist/algoliasearch-lite';
+import algoliasearch from 'algoliasearch';
 
 @Injectable({
   providedIn: 'root',
