@@ -12,9 +12,17 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { NetflixTitle } from '../../+netfix/netflix.models';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectPagination } from '../../+netfix/netflix-title.selectors';
+import { queryPagination } from '../../+netfix/netflix-titles.actions';
+import {
+  NetflixTitle,
+  NetflixTitlesPagination,
+  PageEventParams,
+} from '../../+netfix/netflix.models';
 
 @Component({
   selector: 'tor-netflix-results-table',
@@ -32,7 +40,7 @@ import { NetflixTitle } from '../../+netfix/netflix.models';
     ]),
   ],
 })
-export class NetflixResultsTableComponent implements AfterViewInit {
+export class NetflixResultsTableComponent {
   @Input()
   set data(d: NetflixTitle[]) {
     if (d && d.length) {
@@ -42,15 +50,40 @@ export class NetflixResultsTableComponent implements AfterViewInit {
 
   dataSource = new MatTableDataSource<NetflixTitle>([]);
 
-  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  // NOTE: DO NOT USE - pagination handled by algolia search - here for notes only
+  // @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   expandedElement: NetflixTitle | null = null;
 
   columnsToDisplay = ['title', 'description'];
 
-  ngAfterViewInit() {
-    if (this.paginator) {
-      this.dataSource.paginator = this.paginator;
-    }
+  pagination: NetflixTitlesPagination = {
+    pageSize: 0,
+    length: 0,
+    pageIndex: 0,
+  };
+
+  pagination$: Observable<NetflixTitlesPagination> = this.store.select(
+    selectPagination
+  );
+
+  constructor(private store: Store) {}
+
+  // ngAfterViewInit() {
+
+  // NOTE: DO NOT USE - pagination handled by algolia search - here for notes only
+  // if (this.paginator) {
+  //   // this.dataSource.paginator = this.paginator;
+  // }
+  // }
+
+  onPage(event: PageEvent) {
+    this.store.dispatch(
+      queryPagination({
+        pagination: <PageEventParams>{
+          ...event,
+        },
+      })
+    );
   }
 }

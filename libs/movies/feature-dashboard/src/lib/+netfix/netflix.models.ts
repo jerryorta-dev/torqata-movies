@@ -24,3 +24,19 @@ export interface NetflixTitlesState
   // additional entities state properties
   loading: boolean;
 }
+
+/**
+ * To Support MatPaginator
+ */
+export interface NetflixTitlesPagination {
+  pageSize: number;
+  length: number;
+  pageIndex: number;
+}
+
+export interface PageEventParams {
+  previousPageIndex: number;
+  pageIndex: number;
+  pageSize: number;
+  length: number;
+}

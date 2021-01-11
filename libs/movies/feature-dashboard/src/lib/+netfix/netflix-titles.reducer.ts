@@ -9,6 +9,7 @@ import {
   loadNetflixTitles,
   loadSearchResults,
   queryNetflixTitles,
+  queryPagination,
   updateNetflixTitle,
   updateNetflixTitles,
   upsertNetflixTitle,
@@ -77,12 +78,13 @@ const reducer = createReducer(
     _state.page = action.results.page;
     _state.params = action.results.params;
     _state.processingTimeMS = action.results.processingTimeMS;
+    _state.query = action.results.query;
 
     _state.loading = false;
 
     return _state;
   }),
-  on(queryNetflixTitles, (state, action) => {
+  on(queryNetflixTitles, queryPagination, (state, action) => {
     return {
       ...state,
       loading: true,

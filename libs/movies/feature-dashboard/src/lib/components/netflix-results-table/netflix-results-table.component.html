@@ -48,3 +48,11 @@
     class="example-detail-row"
   ></tr>
 </table>
+<mat-paginator
+  [length]="(pagination$ | ngrxPush)?.length"
+  [pageSize]="(pagination$ | ngrxPush)?.pageSize"
+  [pageIndex]="(pagination$ | ngrxPush)?.pageIndex"
+  showFirstLastButtons
+  (page)="onPage($event)"
+>
+</mat-paginator>

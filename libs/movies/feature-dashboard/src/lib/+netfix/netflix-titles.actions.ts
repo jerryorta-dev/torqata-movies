@@ -1,7 +1,7 @@
 import { SearchResponse } from '@algolia/client-search';
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { NetflixTitle } from './netflix.models';
+import { NetflixTitle, PageEventParams } from './netflix.models';
 
 export const loadNetflixTitles = createAction(
   '[NetflixTitle/API] Load NetflixTitles',
@@ -60,4 +60,9 @@ export const loadSearchResults = createAction(
 export const queryNetflixTitles = createAction(
   '[NetflixTitles/API] Query NetflixTitles',
   props<{ query: string }>()
+);
+
+export const queryPagination = createAction(
+  '[NetflixTitles/API] Query Pagination NetflixTitles',
+  props<{ pagination: PageEventParams }>()
 );

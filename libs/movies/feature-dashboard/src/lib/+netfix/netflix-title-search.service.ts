@@ -5,7 +5,7 @@ import { IEnvironment } from '@tor/shared/models';
 import algoliasearch, { SearchIndex } from 'algoliasearch';
 import { from, Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import { NetflixTitle } from './netflix.models';
+import { NetflixTitle, PageEventParams } from './netflix.models';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +34,27 @@ export class NetflixTitleSearchService {
     this._cancelCurrentQuery$.next(true);
 
     return from(this.searchIndex.search(query, this._queryConfig)).pipe(
+      takeUntil(this._cancelCurrentQuery$),
+      map((results: SearchResponse<unknown>) => {
+        return <SearchResponse<NetflixTitle>>{
+          ...results,
+        };
+      })
+    );
+  }
+
+  queryPage(
+    query: string,
+    pagination: PageEventParams
+  ): Observable<SearchResponse<NetflixTitle>> {
+    this._cancelCurrentQuery$.next(true);
+
+    return from(
+      this.searchIndex.search(query, {
+        ...this._queryConfig,
+        page: pagination.pageIndex,
+      })
+    ).pipe(
       takeUntil(this._cancelCurrentQuery$),
       map((results: SearchResponse<unknown>) => {
         return <SearchResponse<NetflixTitle>>{
