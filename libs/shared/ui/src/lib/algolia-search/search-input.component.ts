@@ -8,42 +8,36 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AlgoliaSearchService } from '@tor/shared/data-access';
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
-import { AlgoliaSearchQuery } from './algolia-search.models';
+import { SearchQuery } from './search-input.models';
 
 @Component({
-  selector: 'tor-algolia-search',
-  templateUrl: './algolia-search.component.html',
-  styleUrls: ['./algolia-search.component.scss'],
+  selector: 'tor-search-input',
+  templateUrl: './search-input.component.html',
+  styleUrls: ['./search-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlgoliaSearchComponent implements OnInit, OnDestroy {
+export class SearchInputComponent implements OnInit, OnDestroy {
   private _onDestroy$: Subject<boolean> = new Subject();
 
   searchFormGroup: FormGroup;
 
-  @Output() changes: EventEmitter<AlgoliaSearchQuery> = new EventEmitter<
-    AlgoliaSearchQuery
+  @Output() changes: EventEmitter<SearchQuery> = new EventEmitter<
+    SearchQuery
   >();
 
-  constructor(
-    private fb: FormBuilder,
-    private cd: ChangeDetectorRef,
-    private search: AlgoliaSearchService
-  ) {
+  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {
     this.searchFormGroup = this.buildForm();
   }
 
   ngOnInit(): void {
     this.searchFormGroup.valueChanges
       .pipe(
-        filter((query: AlgoliaSearchQuery) => query.query.length > 3),
+        filter((query: SearchQuery) => query.query.length > 3),
         takeUntil(this._onDestroy$)
       )
-      .subscribe((query: AlgoliaSearchQuery) => {
-        this.search.query(query.query);
+      .subscribe((query: SearchQuery) => {
         this.changes.next(query);
       });
 

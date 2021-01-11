@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlgoliaSearchComponent } from './algolia-search.component';
+import { SearchInputComponent } from './search-input.component';
 
 describe('AlgoliaSearchComponent', () => {
-  let component: AlgoliaSearchComponent;
-  let fixture: ComponentFixture<AlgoliaSearchComponent>;
+  let component: SearchInputComponent;
+  let fixture: ComponentFixture<SearchInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AlgoliaSearchComponent],
+      declarations: [SearchInputComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlgoliaSearchComponent);
+    fixture = TestBed.createComponent(SearchInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

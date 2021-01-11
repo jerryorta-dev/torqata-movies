@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import {
-  AppState,
-  initialAccountState,
-  initialNetflexTitlesState,
-} from '@tor/shared/models';
+import { AppState, initialAccountState } from '@tor/shared/models';
 import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
-import { AlgoliaSearchService } from './algolia-search.service';
 
 @NgModule({
   imports: [
@@ -20,7 +15,6 @@ import { AlgoliaSearchService } from './algolia-search.service';
       {
         initialState: <AppState>{
           account: initialAccountState,
-          netflixTitles: initialNetflexTitlesState,
         },
         runtimeChecks: {
           strictStateImmutability: false,
@@ -34,6 +28,6 @@ import { AlgoliaSearchService } from './algolia-search.service';
     ),
     EffectsModule.forRoot([AccountEffects]),
   ],
-  providers: [AccountFirebaseService, AlgoliaSearchService],
+  providers: [AccountFirebaseService],
 })
 export class SharedDataAccessModule {}

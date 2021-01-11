@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AlgoliaSearchQuery } from '@tor/shared/ui';
+import { Store } from '@ngrx/store';
+import { SearchQuery } from '@tor/shared/ui';
+import { queryNetflixTitles } from './+netfix/netflix-titles.actions';
 
 @Component({
   selector: 'tor-movies-feature-dashboard',
@@ -8,7 +10,13 @@ import { AlgoliaSearchQuery } from '@tor/shared/ui';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviesFeatureDashboardComponent {
-  onQueryInputChanges(search: AlgoliaSearchQuery) {
-    console.log(search);
+  constructor(private store: Store) {}
+
+  onQueryInputChanges(search: SearchQuery) {
+    this.store.dispatch(
+      queryNetflixTitles({
+        query: search.query,
+      })
+    );
   }
 }

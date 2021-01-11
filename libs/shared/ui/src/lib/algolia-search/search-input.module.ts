@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AlgoliaSearchComponent } from './algolia-search.component';
+import { SearchInputComponent } from './search-input.component';
 
 @NgModule({
-  declarations: [AlgoliaSearchComponent],
-  exports: [AlgoliaSearchComponent],
+  declarations: [SearchInputComponent],
+  exports: [SearchInputComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -15,4 +15,4 @@ import { AlgoliaSearchComponent } from './algolia-search.component';
     MatFormFieldModule,
   ],
 })
-export class AlgoliaSearchModule {}
+export class SearchInputModule {}
