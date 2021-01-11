@@ -14,6 +14,9 @@ export class NetflixTitleSearchService {
   // TODO obfuscate keys?
   private searchIndex: SearchIndex;
   private _cancelCurrentQuery$: Subject<boolean> = new Subject<boolean>();
+  private _queryConfig: { [key: string]: number } = {
+    hitsPerPage: 10,
+  };
 
   constructor(
     private store: Store,
@@ -30,7 +33,7 @@ export class NetflixTitleSearchService {
   query(query: string): Observable<SearchResponse<NetflixTitle>> {
     this._cancelCurrentQuery$.next(true);
 
-    return from(this.searchIndex.search(query)).pipe(
+    return from(this.searchIndex.search(query, this._queryConfig)).pipe(
       takeUntil(this._cancelCurrentQuery$),
       map((results: SearchResponse<unknown>) => {
         return <SearchResponse<NetflixTitle>>{

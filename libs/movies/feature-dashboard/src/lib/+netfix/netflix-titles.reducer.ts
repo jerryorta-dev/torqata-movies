@@ -1,3 +1,4 @@
+import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 import {
   addNetflixTitle,
@@ -13,11 +14,28 @@ import {
   upsertNetflixTitle,
   upsertNetflixTitles,
 } from './netflix-titles.actions';
-import {
-  adapter,
-  initialNetflexTitlesState,
-  NetflixTitlesState,
-} from './netflix.models';
+import { NetflixTitle, NetflixTitlesState } from './netflix.models';
+
+export const adapter: EntityAdapter<NetflixTitle> = createEntityAdapter<
+  NetflixTitle
+>({
+  selectId: (title: NetflixTitle) => title.show_id,
+});
+
+export const initialNetflexTitlesState: NetflixTitlesState = adapter.getInitialState(
+  {
+    // additional entity state properties
+    loading: true,
+    exhaustiveNbHits: false,
+    hitsPerPage: 0,
+    nbHits: 0,
+    nbPages: 0,
+    page: 0,
+    params: '',
+    processingTimeMS: 0,
+    query: '',
+  }
+);
 
 const reducer = createReducer(
   initialNetflexTitlesState,
@@ -78,3 +96,5 @@ export function netflixTitlesReducer(
 ) {
   return reducer(state, action);
 }
+
+export const movieEntitySelectors = adapter.getSelectors();

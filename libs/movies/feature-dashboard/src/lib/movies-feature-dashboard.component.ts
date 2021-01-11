@@ -1,7 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { SearchQuery } from '@tor/shared/ui';
+import { Observable } from 'rxjs';
+import {
+  selectAllTitles,
+  selectIsLoading,
+} from './+netfix/netflix-title.selectors';
 import { queryNetflixTitles } from './+netfix/netflix-titles.actions';
+import { NetflixTitle } from './+netfix/netflix.models';
 
 @Component({
   selector: 'tor-movies-feature-dashboard',
@@ -10,6 +16,11 @@ import { queryNetflixTitles } from './+netfix/netflix-titles.actions';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviesFeatureDashboardComponent {
+  titleSearchResult$: Observable<NetflixTitle[]> = this.store.select(
+    selectAllTitles
+  );
+  isLoading$: Observable<boolean> = this.store.select(selectIsLoading);
+
   constructor(private store: Store) {}
 
   onQueryInputChanges(search: SearchQuery) {

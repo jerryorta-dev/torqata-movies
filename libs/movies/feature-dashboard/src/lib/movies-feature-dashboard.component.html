@@ -1,3 +1,7 @@
 <tor-app-navbar></tor-app-navbar>
 <tor-search-input (changes)="onQueryInputChanges($event)"></tor-search-input>
-<div class="dashboard-content"></div>
+<div class="dashboard-content">
+  <tor-netflix-results-table
+    [data]="titleSearchResult$ | ngrxPush"
+  ></tor-netflix-results-table>
+</div>
