@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgZone } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { logOut } from '@tor/shared/actions';
 import { selectAccountPhotoUrl } from '@tor/shared/selectors';
@@ -13,9 +13,12 @@ import { Observable } from 'rxjs';
 export class AppNavbarComponent {
   displayURL$: Observable<string> = this.store.select(selectAccountPhotoUrl);
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private zone: NgZone) {}
 
   logout() {
-    this.store.dispatch(logOut());
+    console.log('logout');
+    this.zone.run(() => {
+      this.store.dispatch(logOut());
+    });
   }
 }

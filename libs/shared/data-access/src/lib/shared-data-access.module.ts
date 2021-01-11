@@ -4,11 +4,14 @@ import { StoreModule } from '@ngrx/store';
 import {
   AppState,
   initialAccountState,
+  initialNetflexTitlesState,
   initialWebsocketRegistryState,
+  netflixTitlesesFeatureKey,
 } from '@tor/shared/models';
 import { AccountFirebaseService } from './+account/account-firebase.service';
 import { AccountEffects } from './+account/account.effects';
 import { accountReducer } from './+account/account.reducer';
+import { netflixTitlesReducer } from './+netfix/netflix-titles.reducer';
 import { websocketRegistryReducer } from './+websocket-registry/websocket-registry.reducer';
 
 @NgModule({
@@ -22,6 +25,7 @@ import { websocketRegistryReducer } from './+websocket-registry/websocket-regist
         initialState: <AppState>{
           account: initialAccountState,
           webSocketRegistry: initialWebsocketRegistryState,
+          netflixTitles: initialNetflexTitlesState,
         },
         runtimeChecks: {
           strictStateImmutability: false,

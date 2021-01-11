@@ -6,8 +6,4 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./movies-feature-dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MoviesFeatureDashboardComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class MoviesFeatureDashboardComponent {}
