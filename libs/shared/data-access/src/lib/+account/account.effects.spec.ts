@@ -3,15 +3,13 @@ import { Store } from '@ngrx/store';
 import { MockStore } from '@ngrx/store/testing';
 import { logOut } from '@tor/shared/actions';
 import { CommonAppRouts } from '@tor/shared/models';
-
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import { of } from 'rxjs';
 import { AccountEffects } from './account.effects';
 
 firebase.initializeApp({
   apiKey: 'foo',
   authDomain: 'foo.com',
-  projectId: 'foo-app',
 });
 
 describe('AccountEffects', () => {
@@ -39,24 +37,26 @@ describe('AccountEffects', () => {
     flush();
   }));
 
-  // beforeEach(waitForAsync(() => {
+  // TODO - try mocking login using firebase-mock
+  // it('should login', fakeAsync(() => {
+  //   const actions$ = of({ type: 'Mock Login'} );
+  //   const mockRouter: any = {
+  //     navigate: jest.fn(),
+  //   };
+  //   const MockAccountService = {
+  //     // reflective function
+  //     addUser: (account) => of(account),
+  //   };
   //
-  //   mockRouter = {
-  //     navigate: jest.fn()
-  //   }
+  //   const effects = new AccountEffects(
+  //     actions$,
+  //     mockRouter,
+  //     <Store<any>>(<unknown>MockStore),
+  //     MockAccountService
+  //   );
   //
-  //   // TestBed.configureTestingModule({
-  //   //                                  imports: [
-  //   //                                    // RouterTestingModule
-  //   //                                  ],
-  //   //                                  providers: [
-  //   //                                    { provide: Router, useValue: mockRouter },
-  //   //                                    { provide: AccountFirebaseService, useValue: MockAccountService },
-  //   //                                    provideMockActions(() => actions$),
-  //   //                                    provideMockStore({ initialState })
-  //   //                                  ]
-  //   //                                });
-  //   //
-  //   // store = TestBed.inject(MockStore);
+  //   expect(mockRouter.navigate).toHaveBeenCalledWith([CommonAppRouts.LOGIN]);
+  //
+  //   flush();
   // }));
 });
