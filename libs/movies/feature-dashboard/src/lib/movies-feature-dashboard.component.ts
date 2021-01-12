@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {
   selectAllTitles,
   selectIsLoading,
+  selectLongestNovie,
   selectTotalHits,
 } from './+netfix/netflix-title.selectors';
 import {
@@ -25,6 +26,7 @@ export class MoviesFeatureDashboardComponent {
   );
   isLoading$: Observable<boolean> = this.store.select(selectIsLoading);
   numberHits$: Observable<number> = this.store.select(selectTotalHits);
+  longestMovie$: Observable<number> = this.store.select(selectLongestNovie);
 
   constructor(private store: Store) {}
 

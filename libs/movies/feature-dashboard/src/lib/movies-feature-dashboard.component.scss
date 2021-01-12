@@ -26,6 +26,18 @@
     padding: 10px;
   }
 
+  .grid-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .no-padding {
+    padding: 0;
+  }
+
   .grid-tile {
     position: relative;
     width: 100%;
@@ -45,12 +57,27 @@
       width: 300px;
       height: 200px;
 
+      &--wide {
+        width: 620px;
+      }
+
       .tile-title {
-        font-size: 122px;
+        font-size: 96px;
         font-weight: 500;
         line-height: 1;
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+
+        &.movie {
+          font-size: 36px;
+          font-weight: 300;
+          height: 84px;
+          padding-top: 20px;
+        }
+      }
+
+      .tile-description {
+        margin-bottom: 0;
       }
     }
   }

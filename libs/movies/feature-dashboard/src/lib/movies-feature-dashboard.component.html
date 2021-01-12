@@ -10,11 +10,33 @@
       ></tor-netflix-results-table>
     </div>
 
-    <div class="grid-tile grid-tile--text mat-elevation-z4">
-      <div class="tile-title">
-        {{ numberHits$ | ngrxPush }}
+    <div class="grid-column no-padding">
+      <div class="grid-row no-padding">
+        <div class="grid-tile grid-tile--text mat-elevation-z4">
+          <div class="tile-title">
+            {{ numberHits$ | ngrxPush }}
+          </div>
+          <div class="tile-description mat-h2">HITS</div>
+        </div>
+
+        <div class="grid-tile grid-tile--text mat-elevation-z4">
+          <div class="tile-title">
+            {{ (longestMovie$ | ngrxPush)?.duration }}
+          </div>
+          <div class="tile-description mat-h2">LONGEST MOVIE TIME ( min )</div>
+          <div class="tile-description mat-caption">( visible in table )</div>
+        </div>
       </div>
-      <div class="tile-description mat-h2">HITS</div>
+
+      <div
+        class="grid-tile grid-tile--text grid-tile--text--wide mat-elevation-z4"
+      >
+        <div class="tile-title movie">
+          {{ (longestMovie$ | ngrxPush)?.title }}
+        </div>
+        <div class="tile-description mat-h2">TITLE OF LONGEST MOVIE</div>
+        <div class="tile-description mat-caption">( visible in table )</div>
+      </div>
     </div>
   </div>
 </div>

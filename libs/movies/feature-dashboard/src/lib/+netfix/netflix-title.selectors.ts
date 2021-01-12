@@ -22,6 +22,29 @@ export const selectIsLoading = createSelector(
   (state: NetflixTitlesState): boolean => state.loading
 );
 
+export const selectLongestNovie = createSelector(
+  netflixFeatureState,
+  (state: NetflixTitlesState): { duration: number; title: string } => {
+    if (state && state.entities) {
+      return (<NetflixTitle[]>Object.values(state.entities)).reduce(
+        (t: { duration: number; title: string }, m: NetflixTitle) => {
+          if (m.duration > t.duration) {
+            return {
+              duration: m.duration,
+              title: m.title,
+            };
+          }
+
+          return t;
+        },
+        { duration: 0, title: '' }
+      );
+    }
+
+    return 0;
+  }
+);
+
 export const selectQueryString = createSelector(
   netflixFeatureState,
   (state: NetflixTitlesState): string => {
