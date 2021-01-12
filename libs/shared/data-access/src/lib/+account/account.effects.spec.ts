@@ -1,23 +1,20 @@
-import { fakeAsync, tick } from '@angular/core/testing';
+import { fakeAsync, flush } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { MockStore } from '@ngrx/store/testing';
 import { logOut } from '@tor/shared/actions';
+import { CommonAppRouts } from '@tor/shared/models';
+
+import firebase from 'firebase/app';
 import { of } from 'rxjs';
 import { AccountEffects } from './account.effects';
 
-jest.mock('firebase');
+firebase.initializeApp({
+  apiKey: 'foo',
+  authDomain: 'foo.com',
+  projectId: 'foo-app',
+});
 
 describe('AccountEffects', () => {
-  // let store: MockStore;
-  //
-  // const initialState: AccountState = {
-  //   isLoggedIn: true,
-  //   account: {
-  //     photoURL: 'my/photo.jpg',
-  //     uidHash: '1234556'
-  //   }
-  // };
-
   it('should logout', fakeAsync(() => {
     const actions$ = of(logOut);
     const mockRouter: any = {
@@ -35,11 +32,11 @@ describe('AccountEffects', () => {
       MockAccountService
     );
 
-    tick();
-
     effects.logout$.subscribe(() => {
-      expect(mockRouter.navigate).not.toHaveBeenCalled();
+      expect(mockRouter.navigate).toHaveBeenCalledWith([CommonAppRouts.LOGIN]);
     });
+
+    flush();
   }));
 
   // beforeEach(waitForAsync(() => {
