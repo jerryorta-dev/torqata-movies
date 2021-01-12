@@ -1,7 +1,16 @@
+@import '~@angular/material/theming';
+@import 'lightTheme';
+
 @mixin netflix-results-table-theme($theme) {
+  $accent: map-get($theme, accent);
+
   tor-netflix-results-table {
     .cdk-column-title {
       padding-right: 10px !important;
+    }
+
+    .expanded-title-color {
+      color: mat-color($accent, default);
     }
   }
 }

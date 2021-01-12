@@ -19,6 +19,7 @@
 
     tr.movie-element-row:not(.movie-expanded-row):hover {
       background: whitesmoke;
+      cursor: pointer;
     }
 
     tr.movie-element-row:not(.movie-expanded-row):active {
@@ -31,25 +32,25 @@
 
     .movie-element-detail {
       overflow: hidden;
-      display: flex;
+      display: block;
 
       .detail-title {
         font-size: 12px;
         font-weight: 400;
+        min-width: 70px;
+        display: inline-block;
+      }
+
+      > div:last-child {
+        margin-bottom: 10px;
       }
     }
 
-    .movie-element-stats {
-      padding: 8px;
-      margin: 8px 0;
-      font-size: 8px;
-      font-weight: 200;
-      height: 104px;
+    .movie-element-cast {
       border-bottom: 1px solid grey;
-    }
-
-    .movie-element-description {
-      padding: 16px;
+      border-top: 1px solid grey;
+      padding: 10px 0;
+      margin: 10px 0;
     }
   }
 }

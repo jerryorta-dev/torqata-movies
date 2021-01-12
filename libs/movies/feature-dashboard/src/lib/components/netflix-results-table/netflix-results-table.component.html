@@ -12,7 +12,13 @@
       <th mat-header-cell *matHeaderCellDef>
         {{ column }} ( select row to expand )
       </th>
-      <td mat-cell *matCellDef="let movie">{{ movie[column] }}</td>
+      <td
+        mat-cell
+        *matCellDef="let movie"
+        [ngClass]="{ 'expanded-title-color': movie == expandedElement }"
+      >
+        {{ movie[column] }}
+      </td>
     </ng-container>
 
     <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
@@ -26,13 +32,18 @@
           class="movie-element-detail"
           [@detailExpand]="movie == expandedElement ? 'expanded' : 'collapsed'"
         >
-          <div class="movie-element-stats">
-            <div>
-              <span class="detail-title">Directors</span> {{ movie.director }}
-            </div>
-            <div>{{ movie.duration }} min</div>
+          <div>
+            <span class="detail-title">Directors</span> {{ movie.director }}
           </div>
-          <div class="movie-element-description">
+          <div><span class="detail-title">Rated</span> {{ movie.rating }}</div>
+          <div>
+            <span class="detail-title">Released</span> {{ movie.release_year }}
+          </div>
+          <div class="movie-element-cast">
+            <div><span class="detail-title">Cast</span> {{ movie.cast }}</div>
+          </div>
+          <div>
+            <span class="detail-title">Description</span>
             {{ movie.description }}
           </div>
         </div>
