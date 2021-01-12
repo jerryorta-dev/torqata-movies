@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SvgSpriteLoaderService } from '@tor/shared/utils';
 
 import { MoviesFeatureLoginComponent } from './movies-feature-login.component';
 
@@ -9,6 +10,7 @@ describe('MoviesFeatureLoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MoviesFeatureLoginComponent],
+      providers: [SvgSpriteLoaderService],
     }).compileComponents();
   });
 
