@@ -1,6 +1,5 @@
 import { SearchResponse } from '@algolia/client-search';
 import { Inject, Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { IEnvironment } from '@tor/shared/models';
 import algoliasearch, { SearchIndex } from 'algoliasearch';
 import { from, Observable, Subject } from 'rxjs';
@@ -21,10 +20,7 @@ export class NetflixTitlesSearchService {
     hitsPerPage: 10,
   };
 
-  constructor(
-    private store: Store,
-    @Inject('ENVIRONMENT') private environment: IEnvironment
-  ) {
+  constructor(@Inject('ENVIRONMENT') private environment: IEnvironment) {
     const _client = algoliasearch(
       this.environment.algolia.appId,
       this.environment.algolia.apiKey

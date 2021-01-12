@@ -1,11 +1,8 @@
 import { SearchResponse } from '@algolia/client-search';
-import { fakeAsync, flush, TestBed } from '@angular/core/testing';
-import { provideMockActions } from '@ngrx/effects/testing';
+import { fakeAsync, flush } from '@angular/core/testing';
 import { Action, Store } from '@ngrx/store';
 import { MockStore } from '@ngrx/store/testing';
-import { logOut } from '@tor/shared/actions';
-import { Observable, of } from 'rxjs';
-import { NetflixTitlesSearchService } from './netflix-titles-search.service';
+import { of } from 'rxjs';
 import {
   loadSearchResults,
   queryNetflixTitles,
