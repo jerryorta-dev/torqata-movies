@@ -1,83 +1,69 @@
 import { SearchResponse } from '@algolia/client-search';
-import { fakeAsync, flush } from '@angular/core/testing';
+import { fakeAsync, flush, TestBed, waitForAsync } from '@angular/core/testing';
+import { provideMockActions } from '@ngrx/effects/testing';
 import { Action, Store } from '@ngrx/store';
-import { MockStore } from '@ngrx/store/testing';
-import { of } from 'rxjs';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Observable, of } from 'rxjs';
+import { NetflixTitlesSearchService } from './netflix-titles-search.service';
 import {
   loadSearchResults,
   queryNetflixTitles,
-  queryPagination,
 } from './netflix-titles.actions';
 
 import { NetflixTitlesEffects } from './netflix-titles.effects';
+import { initialNetflexTitlesState } from './netflix-titles.reducer';
 import { NetflixTitle, PageEventParams } from './netflix.models';
 
 describe('NetflixTitlesEffects', () => {
+  let effects: NetflixTitlesEffects;
+  let actions$ = new Observable<Action>();
+  let store: MockStore;
+  const initialState = {
+    ...initialNetflexTitlesState,
+  };
+
+  const results = <SearchResponse<NetflixTitle>>{
+    hits: [],
+    loading: true,
+    exhaustiveNbHits: false,
+    hitsPerPage: 0,
+    nbHits: 0,
+    nbPages: 0,
+    page: 0,
+    params: '',
+    processingTimeMS: 0,
+    query: 'foo',
+  };
+
+  beforeEach(
+    waitForAsync(() => {
+      const mockNetflixTitlesSearchServie: any = {
+        query: (query: string) => {
+          return of({ results });
+        },
+        queryPage: (query: string, pagination: PageEventParams) =>
+          of('no used'),
+      };
+
+      TestBed.configureTestingModule({
+        providers: [
+          NetflixTitlesEffects,
+          {
+            provide: NetflixTitlesSearchService,
+            useValue: mockNetflixTitlesSearchServie,
+          },
+          provideMockStore({ initialState }),
+          provideMockActions(() => actions$),
+        ],
+      });
+
+      store = TestBed.inject(MockStore);
+      effects = TestBed.inject<NetflixTitlesEffects>(NetflixTitlesEffects);
+    })
+  );
+
   it('should be created', fakeAsync(() => {
-    const actions$ = of(queryNetflixTitles);
-
-    const results = <SearchResponse<NetflixTitle>>{
-      hits: [],
-      loading: true,
-      exhaustiveNbHits: false,
-      hitsPerPage: 0,
-      nbHits: 0,
-      nbPages: 0,
-      page: 0,
-      params: '',
-      processingTimeMS: 0,
-      query: 'foo',
-    };
-
-    const mockNetflixTitlesSearchServic: any = {
-      query: (query: string) => {
-        return of({ results });
-      },
-      queryPage: (query: string, pagination: PageEventParams) => of('no used'),
-    };
-
-    const effects = new NetflixTitlesEffects(
-      actions$,
-      mockNetflixTitlesSearchServic,
-      <Store<any>>(<unknown>MockStore)
-    );
-
-    effects.queryNetflixTitles$.subscribe((action: Action) => {
-      expect(action.type).toBe(loadSearchResults({ results }).type);
-    });
-
-    flush();
-  }));
-
-  it('should be created', fakeAsync(() => {
-    const actions$ = of(queryPagination);
-
-    const results = <SearchResponse<NetflixTitle>>{
-      hits: [],
-      loading: true,
-      exhaustiveNbHits: false,
-      hitsPerPage: 0,
-      nbHits: 0,
-      nbPages: 0,
-      page: 0,
-      params: '',
-      processingTimeMS: 0,
-      query: 'foo',
-    };
-
-    const mockNetflixTitlesSearchServic: any = {
-      query: (query: string) => {
-        return of({ results });
-      },
-      queryPage: (query: string, pagination: PageEventParams) =>
-        of({ results }),
-    };
-
-    const effects = new NetflixTitlesEffects(
-      actions$,
-      mockNetflixTitlesSearchServic,
-      <Store<any>>(<unknown>MockStore)
-    );
+    actions$ = of(queryNetflixTitles);
 
     effects.queryNetflixTitles$.subscribe((action: Action) => {
       expect(action.type).toBe(loadSearchResults({ results }).type);
