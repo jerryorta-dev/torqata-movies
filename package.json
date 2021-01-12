@@ -99,7 +99,6 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-cypress": "^2.10.3",
     "firebase-functions-test": "^0.2.3",
-    "firebase-mock": "^2.3.2",
     "husky": "^4.3.7",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.1",

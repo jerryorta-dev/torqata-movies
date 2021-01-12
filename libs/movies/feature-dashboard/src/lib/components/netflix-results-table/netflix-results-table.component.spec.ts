@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NetflixResultsTableComponent } from './netflix-results-table.component';
+import { NetflixResultsTableModule } from './netflix-results-table.module';
 
 describe('NetflixResultsTableComponent', () => {
   let component: NetflixResultsTableComponent;
@@ -8,7 +9,7 @@ describe('NetflixResultsTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NetflixResultsTableComponent],
+      imports: [NetflixResultsTableModule],
     }).compileComponents();
   });
 
