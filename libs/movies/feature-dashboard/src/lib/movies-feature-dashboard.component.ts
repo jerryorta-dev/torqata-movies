@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {
   selectAllTitles,
   selectIsLoading,
+  selectTotalHits,
 } from './+netfix/netflix-title.selectors';
 import { queryNetflixTitles } from './+netfix/netflix-titles.actions';
 import { NetflixTitle } from './+netfix/netflix.models';
@@ -20,6 +21,7 @@ export class MoviesFeatureDashboardComponent {
     selectAllTitles
   );
   isLoading$: Observable<boolean> = this.store.select(selectIsLoading);
+  numberHits$: Observable<number> = this.store.select(selectTotalHits);
 
   constructor(private store: Store) {}
 

@@ -2,8 +2,21 @@
 @import 'lightTheme';
 
 @mixin movies-feature-dashboard-theme($theme) {
-  .dashboard-search {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, primary);
+
+  .dashboard-search,
+  .grid-tile {
     background: $white;
+  }
+
+  .grid-tile {
+    .tile-title {
+      color: mat-color($primary, default);
+    }
+    .tile-description {
+      color: mat-color($accent, default);
+    }
   }
 
   tor-movies-feature-dashboard {

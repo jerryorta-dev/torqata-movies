@@ -3,7 +3,18 @@
   <tor-search-input (changes)="onQueryInputChanges($event)"></tor-search-input>
 </div>
 <div class="dashboard-content">
-  <tor-netflix-results-table
-    [data]="titleSearchResult$ | ngrxPush"
-  ></tor-netflix-results-table>
+  <div class="grid-row">
+    <div class="grid-tile">
+      <tor-netflix-results-table
+        [data]="titleSearchResult$ | ngrxPush"
+      ></tor-netflix-results-table>
+    </div>
+
+    <div class="grid-tile grid-tile--text mat-elevation-z4">
+      <div class="tile-title">
+        {{ numberHits$ | ngrxPush }}
+      </div>
+      <div class="tile-description mat-h2">HITS</div>
+    </div>
+  </div>
 </div>

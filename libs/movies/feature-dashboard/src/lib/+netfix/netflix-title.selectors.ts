@@ -32,6 +32,16 @@ export const selectQueryString = createSelector(
   }
 );
 
+export const selectTotalHits = createSelector(
+  netflixFeatureState,
+  (state: NetflixTitlesState): number => {
+    if (state && state.nbHits !== undefined) {
+      return state.nbHits;
+    }
+    return 0;
+  }
+);
+
 export const selectPagination = createSelector(
   netflixFeatureState,
   (state: NetflixTitlesState): NetflixTitlesPagination => {
