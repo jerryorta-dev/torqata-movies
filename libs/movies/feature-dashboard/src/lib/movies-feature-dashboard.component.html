@@ -4,12 +4,6 @@
 </div>
 <div class="dashboard-content">
   <div class="grid-row">
-    <div class="grid-tile grid-tile--table">
-      <tor-netflix-results-table
-        [data]="titleSearchResult$ | ngrxPush"
-      ></tor-netflix-results-table>
-    </div>
-
     <div class="grid-column no-padding">
       <div class="grid-row no-padding">
         <div class="grid-tile grid-tile--text mat-elevation-z4">
@@ -37,6 +31,12 @@
         <div class="tile-description mat-h2">TITLE OF LONGEST MOVIE</div>
         <div class="tile-description mat-caption">( visible in table )</div>
       </div>
+    </div>
+
+    <div class="grid-tile grid-tile--table">
+      <tor-netflix-results-table
+        [data]="titleSearchResult$ | ngrxPush"
+      ></tor-netflix-results-table>
     </div>
   </div>
 </div>
