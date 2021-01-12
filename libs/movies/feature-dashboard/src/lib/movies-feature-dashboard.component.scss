@@ -31,6 +31,12 @@
     width: 100%;
     margin: 10px;
 
+    &--table {
+      tor-netflix-results-table {
+        height: 500px;
+      }
+    }
+
     &--text {
       display: flex;
       flex-direction: column;

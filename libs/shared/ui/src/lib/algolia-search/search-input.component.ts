@@ -27,14 +27,21 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     SearchQuery
   >();
 
+  @Output() clear: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {
     this.searchFormGroup = this.buildForm();
+  }
+
+  clearInput() {
+    this.clear.next(true);
+    this.searchFormGroup.reset({ query: '' }, { emitEvent: false });
   }
 
   ngOnInit(): void {
     this.searchFormGroup.valueChanges
       .pipe(
-        filter((query: SearchQuery) => query.query.length > 3),
+        filter((query: SearchQuery) => query.query.length >= 3),
         debounceTime(300),
         takeUntil(this._onDestroy$)
       )

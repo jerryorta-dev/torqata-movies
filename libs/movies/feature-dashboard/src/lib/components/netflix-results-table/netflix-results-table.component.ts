@@ -49,7 +49,7 @@ export class NetflixResultsTableComponent {
 
   expandedElement: NetflixTitle | null = null;
 
-  columnsToDisplay = ['title', 'description'];
+  columnsToDisplay = ['title'];
 
   pagination: NetflixTitlesPagination = {
     pageSize: 0,

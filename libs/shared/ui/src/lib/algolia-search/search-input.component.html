@@ -6,6 +6,13 @@
       formControlName="query"
       placeholder="Peter Jackson"
       autocomplete="off"
+      #input
     />
+    <button matSuffix mat-icon-button (click)="clearInput()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <mat-hint>Minimum 3 characters</mat-hint>
+    <mat-hint align="end">{{ input.value?.length || 0 }}/3</mat-hint>
   </mat-form-field>
 </form>

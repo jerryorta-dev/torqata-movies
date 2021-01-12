@@ -67,7 +67,13 @@ const reducer = createReducer(
   on(loadNetflixTitles, (state, action) =>
     adapter.setAll(action.netflixTitles, state)
   ),
-  on(clearNetflixTitles, (state) => adapter.removeAll(state)),
+  on(clearNetflixTitles, (state) => {
+    const _state = adapter.removeAll(state);
+    return {
+      ..._state,
+      ...initialNetflexTitlesState,
+    };
+  }),
   on(loadSearchResults, (state, action) => {
     let _state = adapter.removeAll(state);
     _state = adapter.setAll(action.results.hits, _state);

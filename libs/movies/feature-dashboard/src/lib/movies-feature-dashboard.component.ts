@@ -7,7 +7,10 @@ import {
   selectIsLoading,
   selectTotalHits,
 } from './+netfix/netflix-title.selectors';
-import { queryNetflixTitles } from './+netfix/netflix-titles.actions';
+import {
+  clearNetflixTitles,
+  queryNetflixTitles,
+} from './+netfix/netflix-titles.actions';
 import { NetflixTitle } from './+netfix/netflix.models';
 
 @Component({
