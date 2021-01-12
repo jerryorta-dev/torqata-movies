@@ -41,7 +41,7 @@ export const selectLongestNovie = createSelector(
       );
     }
 
-    return 0;
+    return { duration: 0, title: '' };
   }
 );
 

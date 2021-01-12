@@ -26,7 +26,10 @@ export class MoviesFeatureDashboardComponent {
   );
   isLoading$: Observable<boolean> = this.store.select(selectIsLoading);
   numberHits$: Observable<number> = this.store.select(selectTotalHits);
-  longestMovie$: Observable<number> = this.store.select(selectLongestNovie);
+  longestMovie$: Observable<{
+    duration: number;
+    title: string;
+  }> = this.store.select(selectLongestNovie);
 
   constructor(private store: Store) {}
 
