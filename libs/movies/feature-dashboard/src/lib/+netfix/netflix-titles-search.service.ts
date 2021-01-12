@@ -13,7 +13,7 @@ import { NetflixTitle, PageEventParams } from './netflix.models';
 @Injectable({
   providedIn: 'root',
 })
-export class NetflixTitleSearchService {
+export class NetflixTitlesSearchService {
   // TODO obfuscate keys?
   private searchIndex: SearchIndex;
   private _cancelCurrentQuery$: Subject<boolean> = new Subject<boolean>();

@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-
-import { AlgoliaSearchService } from './algolia-search.service';
+import { NetflixTitlesSearchService } from './netflix-titles-search.service';
 
 describe('AlgoliaSearchService', () => {
-  let service: AlgoliaSearchService;
+  let service: NetflixTitlesSearchService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AlgoliaSearchService);
+    service = TestBed.inject(NetflixTitlesSearchService);
   });
 
   it('should be created', () => {

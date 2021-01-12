@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { map, switchMap, take } from 'rxjs/operators';
-import { NetflixTitleSearchService } from './netflix-title-search.service';
+import { NetflixTitlesSearchService } from './netflix-titles-search.service';
 import { selectQueryString } from './netflix-title.selectors';
 import {
   loadSearchResults,
@@ -52,7 +52,7 @@ export class NetflixTitlesEffects {
 
   constructor(
     private actions$: Actions,
-    private netflixSearch: NetflixTitleSearchService,
+    private netflixSearch: NetflixTitlesSearchService,
     private store: Store
   ) {}
 }
