@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { SvgSpriteLoaderService } from '@tor/shared/utils';
 
 import { MoviesFeatureLoginComponent } from './movies-feature-login.component';
@@ -9,6 +11,7 @@ describe('MoviesFeatureLoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatCardModule, MatIconModule],
       declarations: [MoviesFeatureLoginComponent],
       providers: [SvgSpriteLoaderService],
     }).compileComponents();
