@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ReactiveComponentModule } from '@ngrx/component';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { AppNavbarComponent } from './app-navbar.component';
 
@@ -6,11 +8,15 @@ describe('AppNavbarComponent', () => {
   let component: AppNavbarComponent;
   let fixture: ComponentFixture<AppNavbarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppNavbarComponent],
-    }).compileComponents();
-  });
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [AppNavbarComponent],
+        imports: [ReactiveComponentModule],
+        providers: [provideMockStore()],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppNavbarComponent);

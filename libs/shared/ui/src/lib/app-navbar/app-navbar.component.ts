@@ -16,7 +16,7 @@ export class AppNavbarComponent {
   constructor(private store: Store, private zone: NgZone) {}
 
   logout() {
-    console.log('logout');
+    // console.log('logout');
     this.zone.run(() => {
       this.store.dispatch(logOut());
     });
