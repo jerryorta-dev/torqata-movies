@@ -39,6 +39,7 @@ describe('NetflixTitlesEffects', () => {
 
     beforeEach(
       waitForAsync(() => {
+        // Mock query service
         const mockNetflixTitlesSearchService: any = {
           query: (query: string) => {
             return of({ results });
@@ -98,6 +99,7 @@ describe('NetflixTitlesEffects', () => {
 
     beforeEach(
       waitForAsync(() => {
+        // Mock query service
         const mockNetflixTitlesSearchService: any = {
           query: (query: string) => {
             return of({ results });
@@ -119,7 +121,10 @@ describe('NetflixTitlesEffects', () => {
         });
 
         store = TestBed.inject(MockStore);
+
+        // Mock selector
         store.overrideSelector(selectQueryString, 'foo');
+
         effects = TestBed.inject<NetflixTitlesEffects>(NetflixTitlesEffects);
       })
     );
