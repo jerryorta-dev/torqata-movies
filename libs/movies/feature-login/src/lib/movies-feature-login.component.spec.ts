@@ -26,4 +26,13 @@ describe('MoviesFeatureLoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(MoviesFeatureLoginComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(
+      compiled.querySelector('mat-card-content > div').textContent
+    ).toContain('For demo authentication only. No account data is retained.');
+  });
 });
