@@ -171,7 +171,10 @@
           "builder": "@nrwl/angular:ng-packagr-lite",
           "options": {
             "tsConfig": "libs/movies/feature-dashboard/tsconfig.lib.json",
-            "project": "libs/movies/feature-dashboard/ng-package.json"
+            "project": "libs/movies/feature-dashboard/ng-package.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
+            }
           },
           "configurations": {
             "production": {
@@ -393,7 +396,10 @@
           "builder": "@nrwl/angular:ng-packagr-lite",
           "options": {
             "tsConfig": "libs/shared/ui/tsconfig.lib.json",
-            "project": "libs/shared/ui/ng-package.json"
+            "project": "libs/shared/ui/ng-package.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/theme/src/lib/theming/light-theme"]
+            }
           },
           "configurations": {
             "production": {

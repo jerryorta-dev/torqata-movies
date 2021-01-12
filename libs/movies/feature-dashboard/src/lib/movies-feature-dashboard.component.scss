@@ -3,12 +3,18 @@
   flex-direction: column;
   flex: 1 1 auto;
 
-  tor-search-input {
-    margin: 30px 20px;
+  .dashboard-search {
+    padding: 30px 20px 20px 20px;
+    z-index: 0;
+  }
+
+  tor-app-navbar {
+    z-index: 20;
   }
 
   .dashboard-content {
-    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
     height: 100%;
     overflow-y: scroll;
   }

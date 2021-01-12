@@ -2,8 +2,15 @@
 @import './global-styles';
 @import '../theming/common/_mixins/perfect-scrollbar';
 
+// component themes
+@import '~libs/movies/feature-dashboard/src/lib/theme.lib.scss';
+@import '~libs/shared/ui/src/lib/theme.lib.scss';
+
 @mixin ui-styles($theme) {
   @include utilities();
   @include global-styles($theme);
   @include perfect-scrollbar($theme);
+
+  @include feature-dashboard-theme($theme);
+  @include ui-theme($theme);
 }

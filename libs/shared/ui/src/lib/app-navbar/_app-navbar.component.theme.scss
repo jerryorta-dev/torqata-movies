@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@import 'lightTheme';
+
+@mixin app-navbar-component-theme($theme) {
+  tor-app-navbar {
+    background: $white;
+  }
+}

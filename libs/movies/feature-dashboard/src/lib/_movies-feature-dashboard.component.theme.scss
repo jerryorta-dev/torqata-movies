@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+@import 'lightTheme';
+
+@mixin movies-feature-dashboard-theme($theme) {
+  .dashboard-search {
+    background: $white;
+  }
+
+  tor-movies-feature-dashboard {
+    background: $background-light;
+  }
+}

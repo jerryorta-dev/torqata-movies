@@ -1,0 +1,7 @@
+@mixin netflix-results-table-theme($theme) {
+  tor-netflix-results-table {
+    .cdk-column-title {
+      padding-right: 10px !important;
+    }
+  }
+}

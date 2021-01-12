@@ -1,0 +1,7 @@
+@import './movies-feature-dashboard.component.theme';
+@import './components/netflix-results-table/netflix-results-table.component.theme';
+
+@mixin feature-dashboard-theme($theme) {
+  @include movies-feature-dashboard-theme($theme);
+  @include netflix-results-table-theme($theme);
+}

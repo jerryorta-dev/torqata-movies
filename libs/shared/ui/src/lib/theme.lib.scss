@@ -1,0 +1,5 @@
+@import './app-navbar/app-navbar.component.theme';
+
+@mixin ui-theme($theme) {
+  @include app-navbar-component-theme($theme);
+}

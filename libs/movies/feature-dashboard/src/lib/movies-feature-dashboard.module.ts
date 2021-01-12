@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -23,6 +24,8 @@ import { MoviesFeatureDashboardComponent } from './movies-feature-dashboard.comp
     SearchInputModule,
     AppNavbarModule,
     NetflixResultsTableModule,
+
+    MatCardModule,
 
     StoreModule.forFeature(netflixTitlesesFeatureKey, netflixTitlesReducer, {
       initialState: initialNetflexTitlesState,
