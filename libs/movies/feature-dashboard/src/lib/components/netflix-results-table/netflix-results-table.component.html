@@ -26,9 +26,11 @@
           class="movie-element-detail"
           [@detailExpand]="movie == expandedElement ? 'expanded' : 'collapsed'"
         >
-          <div class="movie-element-diagram">
-            <div class="example-element-position">{{ movie.director }}</div>
-            <div class="movie-element-symbol">{{ movie.duration }}</div>
+          <div class="movie-element-stats">
+            <div>
+              <span class="detail-title">Directors</span> {{ movie.director }}
+            </div>
+            <div>{{ movie.duration }} min</div>
           </div>
           <div class="movie-element-description">
             {{ movie.description }}

@@ -32,21 +32,20 @@
     .movie-element-detail {
       overflow: hidden;
       display: flex;
+
+      .detail-title {
+        font-size: 12px;
+        font-weight: 400;
+      }
     }
 
-    .movie-element-diagram {
-      min-width: 80px;
-      border: 2px solid black;
+    .movie-element-stats {
       padding: 8px;
-      font-weight: lighter;
       margin: 8px 0;
+      font-size: 8px;
+      font-weight: 200;
       height: 104px;
-    }
-
-    .movie-element-symbol {
-      font-weight: bold;
-      font-size: 40px;
-      line-height: normal;
+      border-bottom: 1px solid grey;
     }
 
     .movie-element-description {
